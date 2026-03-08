@@ -218,7 +218,19 @@
             transform: translate(0, 0) scale(1);
         }
 
-        /* Premium Flowing Background */
+        /* Curvy Flow Line */
+        #curvyLine { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: -1; /* behind all content */ 
+            pointer-events: none; 
+            opacity: 0.6;
+        }
+
+        /* Premium Handcrafted Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -228,43 +240,74 @@
             z-index: -2;
             overflow: hidden;
             pointer-events: none;
-            background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f8fafc 100%);
+            background: #ffffff;
         }
 
-        .flowing-wave {
+        .mesh-gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(at 0% 0%, rgba(12, 68, 152, 0.03) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(13, 148, 136, 0.03) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(12, 68, 152, 0.03) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(13, 148, 136, 0.03) 0px, transparent 50%);
+            filter: blur(100px);
+        }
+
+        .flowing-line {
             position: absolute;
             width: 200%;
             height: 100%;
             top: 0;
             left: -50%;
-            opacity: 0.03;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3%3Cpath fill='%230EA5E9' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,181.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x bottom;
-            background-size: 50% 400px;
-            animation: flow 30s linear infinite;
+            opacity: 0.08;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cpath d='M-100 150 Q 150 50 400 150 T 900 150 T 1400 150' fill='none' stroke='%230c4498' stroke-width='0.5'/%3E%3C/svg%3E") repeat-x center;
+            background-size: 50% 300px;
+            animation: flow-line 35s linear infinite;
         }
 
-        .flowing-wave:nth-child(2) {
-            top: -10%;
-            opacity: 0.02;
+        .flowing-line:nth-child(2) {
+            opacity: 0.05;
             animation-duration: 45s;
             animation-direction: reverse;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3%3Cpath fill='%230D9488' fill-opacity='1' d='M0,128L60,144C120,160,240,192,360,186.7C480,181,600,139,720,149.3C840,160,960,224,1080,224C1200,224,1320,160,1380,128L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: 40% 400px;
+            top: 10%;
         }
 
-        @keyframes flow {
-            0% { transform: translateX(0) translateZ(0) scaleY(1); }
-            50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
-            100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+        @keyframes flow-line {
+            0% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(-10%) rotate(1deg); }
+            100% { transform: translateX(-20%) rotate(0deg); }
+        }
+
+        /* Layered Depth Shapes */
+        .depth-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.1;
+            animation: float-shape 28s infinite alternate ease-in-out;
+        }
+
+        .shape-1 { width: 400px; height: 400px; background: var(--primary); top: -100px; right: -100px; }
+        .shape-2 { width: 300px; height: 300px; background: var(--secondary); bottom: 20%; left: -50px; animation-delay: -5s; }
+        .shape-3 { width: 250px; height: 250px; background: var(--primary-light); top: 40%; right: 10%; animation-delay: -10s; }
+
+        @keyframes float-shape {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, 60px) scale(1.1); }
         }
 
         /* Hover & Interactive Polish */
         .service-card, .ba-card-portrait, .review-card, .doctor-card, .trust-stat-card, .gallery-slide {
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .service-card:hover, .ba-card-portrait:hover, .review-card:hover, .trust-stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(30, 58, 138, 0.1);
             border-color: var(--primary);
         }
 
@@ -272,6 +315,12 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(12, 68, 152, 0.25);
         }
 
         .btn::after {
@@ -281,10 +330,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             transform: scaleX(0);
             transform-origin: right;
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
             z-index: -1;
         }
 
@@ -293,21 +342,16 @@
             transform-origin: left;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
-        }
-
         .btn-whatsapp:hover {
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
         }
 
         .gallery-slide img {
-            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .gallery-slide:hover img {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         /* Liquid Glass Navbar Polish */
@@ -483,7 +527,7 @@
             border-radius: 50%;
             opacity: 0.15;
             filter: blur(60px);
-            animation: float 20s infinite alternate;
+            animation: float 28s infinite alternate;
         }
 
         .orb-1 { width: 300px; height: 300px; background: var(--primary); top: -50px; right: -20px; }
@@ -1015,9 +1059,16 @@
 </head>
 <body>
 
+    <!-- Curvy Flowing Background -->
+    <canvas id="curvyLine"></canvas>
+
     <div class="bg-animation">
-        <div class="flowing-wave"></div>
-        <div class="flowing-wave"></div>
+        <div class="mesh-gradient"></div>
+        <div class="flowing-line"></div>
+        <div class="flowing-line"></div>
+        <div class="depth-shape shape-1"></div>
+        <div class="depth-shape shape-2"></div>
+        <div class="depth-shape shape-3"></div>
     </div>
 
     <div id="toast">✅ Appointment Requested!</div>
@@ -1372,9 +1423,34 @@
         mobileMenu.onclick = () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); };
 
         const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
-        }, { threshold: 0.12 });
+            entries.forEach(e => { 
+                if (e.isIntersecting) { 
+                    e.target.classList.add('visible'); 
+                    if (e.target.classList.contains('reveal-stagger')) {
+                        const children = e.target.children;
+                        Array.from(children).forEach((child, i) => {
+                            child.style.transitionDelay = `${i * 0.1}s`;
+                            child.classList.add('visible');
+                        });
+                    }
+                    revealObserver.unobserve(e.target); 
+                } 
+            });
+        }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Magnetic Button Effect
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.05)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
 
         const countObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => {
@@ -1503,6 +1579,67 @@
 
         const dateIn = document.getElementById('apptDate');
         if (dateIn) dateIn.min = new Date().toISOString().split('T')[0];
+
+        // Curvy Wave Animation
+        const canvas = document.getElementById('curvyLine');
+        const ctx = canvas.getContext('2d');
+        
+        let canvasW = canvas.width = window.innerWidth;
+        let canvasH = canvas.height = window.innerHeight;
+        
+        const points = [];
+        const segments = 8;
+        for(let i=0; i<=segments; i++){
+            points.push({
+                x: i * (canvasW / segments),
+                y: canvasH/2 + Math.sin(i*1.5) * 100
+            });
+        }
+        
+        let t = 0;
+        let waveSpeed = 0.012;
+        
+        function drawWave() {
+            ctx.clearRect(0, 0, canvasW, canvasH);
+            
+            // Forward Line
+            ctx.beginPath();
+            ctx.moveTo(points[0].x, points[0].y);
+            for(let i=1; i<points.length; i++){
+                const cpX = (points[i-1].x + points[i].x)/2;
+                const cpY = (points[i-1].y + points[i].y)/2;
+                ctx.quadraticCurveTo(points[i-1].x, points[i-1].y, cpX, cpY);
+            }
+            ctx.strokeStyle = '#0c4498';
+            ctx.lineWidth = 1 + Math.sin(t*5)*0.5;
+            ctx.stroke();
+            
+            // Return Line
+            ctx.beginPath();
+            ctx.moveTo(points[points.length-1].x, points[points.length-1].y);
+            for(let i=points.length-2; i>=0; i--){
+                const cpX = (points[i+1].x + points[i].x)/2;
+                const cpY = (points[i+1].y + points[i].y)/2;
+                ctx.quadraticCurveTo(points[i+1].x, points[i+1].y, cpX, cpY);
+            }
+            ctx.strokeStyle = '#0c4498';
+            ctx.lineWidth = 2 + Math.sin(t*5)*1;
+            ctx.stroke();
+            
+            for(let i=0; i<points.length; i++){
+                points[i].y = canvasH/2 + Math.sin(i + t*5) * 100;
+            }
+            
+            t += waveSpeed;
+            requestAnimationFrame(drawWave);
+        }
+        drawWave();
+        
+        window.addEventListener('resize', () => {
+            canvasW = canvas.width = window.innerWidth;
+            canvasH = canvas.height = window.innerHeight;
+            for(let i=0; i<=segments; i++) points[i].x = i * (canvasW / segments);
+        });
     </script>
 </body>
 </html>
