@@ -60,7 +60,7 @@
         "@type": "Physician",
         "name": "Dr. Prashanth R Kamath",
         "jobTitle": "Dermatologist",
-        "description": "Skin & Hair Specialist with 9+ years experience."
+        "description": "Skin & Hair Specialist with 12+ years experience."
       }
     }
     </script>
@@ -68,7 +68,7 @@
     <!-- Google Fonts CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -77,22 +77,22 @@
     <style>
         :root {
             /* Colors - Light Theme (Updated) */
-            --primary: #0EA5E9;
+            --primary: #0c4498;
             --primary-light: rgba(14, 165, 233, 0.08);
             --secondary: #0D9488;
             --accent: #16A34A;
             --background: #FFFFFF;
-            --dark: #0F172A;
+            --dark: #222f54;
             --mid-gray: #475569;
-            --light-gray: #94A3B8;
+            --light-gray: #64748b;
             --card-bg: #F8FAFC;
-            --border: rgba(15, 23, 42, 0.08);
+            --border: rgba(30, 58, 138, 0.08);
             --white: #ffffff;
             
             /* Typography */
-            --font-headings: 'Playfair Display', serif;
-            --font-ui: 'Space Grotesk', sans-serif;
-            --font-body: 'DM Sans', sans-serif;
+            --font-headings: 'Roboto', sans-serif;
+            --font-ui: 'Roboto', sans-serif;
+            --font-body: 'Titillium Web', sans-serif;
 
             /* Effects */
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -114,14 +114,15 @@
             width: 100%;
             position: relative;
             scroll-behavior: smooth;
+            font-size: 18px;
         }
 
         body {
             font-family: var(--font-body);
             background-color: var(--background);
             color: var(--mid-gray);
-            line-height: 1.5;
-            font-size: 0.88rem;
+            line-height: 1.6;
+            font-size: 1rem;
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
@@ -131,14 +132,21 @@
             height: auto;
         }
 
-        h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.1; margin-bottom: 16px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
-        h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 12px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
-        h3 { font-size: 0.95rem; margin-bottom: 8px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
+        h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.1; margin-bottom: 20px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
+        h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 16px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
+        
+        h1 span, h2 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        h3 { font-size: 1.1rem; margin-bottom: 10px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
         h4 { font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
 
         p {
             font-weight: 400;
-            color: var(--mid-gray);
+            color: #64748b;
         }
 
         a {
@@ -167,13 +175,19 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 60px;
         }
 
         .section-padding {
-            padding: 60px 0;
+            padding: 120px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .section-padding { padding: 80px 0; }
+            html, body { font-size: 16px; }
         }
 
         /* Utility Classes */
@@ -187,18 +201,24 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
+        /* Refined Scroll Reveal System */
         .reveal {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
         }
+
+        .reveal-left { transform: translateX(-30px); }
+        .reveal-right { transform: translateX(30px); }
+        .reveal-zoom { transform: scale(0.95); }
 
         .reveal.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(0, 0) scale(1);
         }
 
-        /* Animated Background Lines */
+        /* Premium Flowing Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -208,36 +228,97 @@
             z-index: -2;
             overflow: hidden;
             pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f8fafc 100%);
         }
 
-        .bg-line-animated {
+        .flowing-wave {
             position: absolute;
-            width: 300vw;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--dark), transparent);
-            opacity: 0.15;
-            transform-origin: center;
-            animation: moveLines 20s linear infinite;
+            width: 200%;
+            height: 100%;
+            top: 0;
+            left: -50%;
+            opacity: 0.03;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3%3Cpath fill='%230EA5E9' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,181.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x bottom;
+            background-size: 50% 400px;
+            animation: flow 30s linear infinite;
         }
 
-        .bg-line-animated:nth-child(1) { top: 10%; animation-duration: 25s; }
-        .bg-line-animated:nth-child(2) { top: 40%; animation-duration: 35s; animation-delay: -10s; opacity: 0.05; }
-        .bg-line-animated:nth-child(3) { top: 70%; animation-duration: 30s; animation-delay: -5s; opacity: 0.06; }
-
-        @keyframes moveLines {
-            0% { transform: translateX(-100%) rotate(-15deg); }
-            100% { transform: translateX(100%) rotate(-15deg); }
+        .flowing-wave:nth-child(2) {
+            top: -10%;
+            opacity: 0.02;
+            animation-duration: 45s;
+            animation-direction: reverse;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3%3Cpath fill='%230D9488' fill-opacity='1' d='M0,128L60,144C120,160,240,192,360,186.7C480,181,600,139,720,149.3C840,160,960,224,1080,224C1200,224,1320,160,1380,128L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
         }
 
-        /* Liquid Glass Navbar Styles */
+        @keyframes flow {
+            0% { transform: translateX(0) translateZ(0) scaleY(1); }
+            50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
+            100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+        }
+
+        /* Hover & Interactive Polish */
+        .service-card, .ba-card-portrait, .review-card, .doctor-card, .trust-stat-card, .gallery-slide {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .service-card:hover, .ba-card-portrait:hover, .review-card:hover, .trust-stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            border-color: var(--primary);
+        }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: -1;
+        }
+
+        .btn:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .gallery-slide img {
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .gallery-slide:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Liquid Glass Navbar Polish */
         nav {
             position: fixed;
             top: 15px;
             left: 50%;
             transform: translateX(-50%);
             width: calc(100% - 40px);
-            max-width: 1160px;
-            height: 64px;
+            max-width: 1540px;
+            height: 72px;
             z-index: 1000;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
@@ -248,14 +329,14 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.5);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            padding: 0 10px;
+            padding: 0 15px;
         }
 
         nav.scrolled {
             top: 10px;
             background: rgba(255, 255, 255, 0.55);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-            height: 58px;
+            height: 64px;
         }
 
         .nav-inner {
@@ -298,7 +379,8 @@
             font-weight: 500;
             font-size: 0.82rem;
             position: relative;
-            color: var(--mid-gray);
+            color: #475569;
+            transition: color 0.15s ease;
         }
 
         .nav-links a:hover { color: var(--primary); }
@@ -356,7 +438,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             z-index: 1001;
@@ -376,11 +458,15 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 90vh;
+            min-height: 95vh;
             display: flex;
             align-items: center;
-            padding-top: 60px;
+            padding: 120px 0 80px;
             overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 100px 0 60px; min-height: 90vh; }
         }
 
         .hero-bg-orbs {
@@ -420,8 +506,12 @@
         .hero-inner {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
+            gap: 80px;
             align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-inner { gap: 40px; }
         }
 
         .badge-pill {
@@ -466,12 +556,12 @@
         .doctor-card {
             background: #ffffff;
             border-radius: 20px;
-            padding: 24px;
+            padding: 28px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border);
             border-top: 4px solid var(--primary);
             position: relative;
-            max-width: 380px;
+            max-width: 420px;
             margin: 40px auto 0;
             transition: var(--transition);
         }
@@ -549,35 +639,40 @@
         .floating-chips { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
         .chip { 
             background: #ffffff; 
-            padding: 12px 20px; 
+            padding: 14px 24px; 
             border-radius: 16px; 
             display: flex; 
             align-items: center; 
-            gap: 10px; 
+            gap: 12px; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
             width: fit-content; 
             animation: float-chip 4s infinite alternate ease-in-out; 
-            font-size: 0.82rem; 
+            font-size: 0.9rem; 
             color: var(--dark); 
             border: 1px solid var(--border); 
         }
         .chip span {
             background: var(--primary-light);
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         .chip:nth-child(2) { align-self: flex-end; animation-delay: -1s; }
         @keyframes float-chip { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
 
         /* Services Section */
         .services { background: var(--background); }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .service-card { background: var(--card-bg); padding: 30px 24px; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .service-card { background: var(--card-bg); padding: 40px 32px; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
+
+        @media (max-width: 1024px) {
+            .services-grid { gap: 20px; }
+            .service-card { padding: 30px 24px; }
+        }
         .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
         .icon-box { width: 50px; height: 50px; border-radius: 14px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 20px; transition: var(--transition); color: var(--primary); }
         .service-card:hover .icon-box { transform: scale(1.1) rotate(5deg); background: var(--primary); color: #ffffff; }
@@ -586,7 +681,11 @@
         .learn-more { color: var(--primary); font-weight: 700; font-family: var(--font-ui); font-size: 0.85rem; display: flex; align-items: center; gap: 4px; }
 
         /* Before/After Gallery - Portrait with Side Info */
-        .ba-grid-portrait { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .ba-grid-portrait { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+
+        @media (max-width: 1024px) {
+            .ba-grid-portrait { gap: 30px; }
+        }
         .ba-card-portrait { 
             background: var(--background); 
             border-radius: var(--radius-lg); 
@@ -658,15 +757,64 @@
             .ba-portrait-info { padding: 20px; }
         }
 
-        /* Trust Section */
-        .trust { background: var(--background); }
-        .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 48px; }
-        .trust-stat-card { background: var(--card-bg); padding: 24px; border-radius: var(--radius-md); text-align: center; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
-        .trust-stat-card span { font-size: 2rem; margin-bottom: 12px; display: block; }
-        .trust-stat-card h2 { font-size: 1.8rem; color: var(--primary); margin: 8px 0; }
+        /* Trust Section - Connected & Full Width */
+        .trust { 
+            background: var(--card-bg); 
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 0 !important;
+            margin: 80px 0;
+        }
+        .trust-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 0; 
+            width: 100%;
+        }
+        .trust-stat-card { 
+            background: transparent; 
+            padding: 48px 24px; 
+            border-radius: 0; 
+            text-align: center; 
+            box-shadow: none; 
+            border: none;
+            position: relative;
+            transition: var(--transition);
+        }
+        /* Vertical Separator Lines */
+        .trust-stat-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 25%;
+            height: 50%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--border), transparent);
+        }
+        .trust-stat-card:hover {
+            background: rgba(14, 165, 233, 0.03);
+        }
+        .trust-stat-card span { font-size: 2.6rem; margin-bottom: 16px; display: block; filter: grayscale(1); opacity: 0.7; transition: var(--transition); }
+        .trust-stat-card:hover span { filter: grayscale(0); opacity: 1; transform: translateY(-4px); }
+        .trust-stat-card h2 { font-size: 2.6rem; color: var(--primary); margin: 8px 0; font-family: var(--font-headings); font-weight: 700; }
+        .trust-stat-card p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--light-gray); font-weight: 600; }
+
+        @media (max-width: 968px) {
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-stat-card:nth-child(2)::after { display: none; }
+            .trust-stat-card { border-bottom: 1px solid var(--border); }
+            .trust-stat-card:nth-child(3), .trust-stat-card:nth-child(4) { border-bottom: none; }
+        }
+        @media (max-width: 480px) {
+            .trust-grid { grid-template-columns: 1fr; }
+            .trust-stat-card::after { display: none; }
+            .trust-stat-card { border-bottom: 1px solid var(--border); padding: 32px 20px; }
+            .trust-stat-card:last-child { border-bottom: none; }
+        }
+
         /* Clinic Gallery Slider */
         .clinic-gallery { background: var(--background); overflow: hidden; }
-        .gallery-container { position: relative; width: 100%; max-width: 1100px; margin: 0 auto; overflow: hidden; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+        .gallery-container { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; overflow: hidden; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--shadow); }
         .gallery-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
         .gallery-slide { flex: 0 0 33.333%; aspect-ratio: 4 / 3; background: #f1f5f9; display: flex; align-items: center; justify-content: center; overflow: hidden; border-right: 1px solid var(--border); }
         .gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
@@ -682,8 +830,12 @@
 
         /* Testimonials */
         .testimonials { background: var(--card-bg); }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px; }
-        .review-card { background: var(--background); padding: 28px; border-radius: var(--radius-lg); box-shadow: var(--shadow); border: 1px solid var(--border); position: relative; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
+
+        @media (max-width: 1024px) {
+            .testimonial-grid { gap: 20px; }
+        }
+        .review-card { background: var(--background); padding: 36px; border-radius: var(--radius-lg); box-shadow: var(--shadow); border: 1px solid var(--border); position: relative; }
         .review-text { font-style: italic; margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--mid-gray); }
         .reviewer { display: flex; align-items: center; gap: 14px; }
         .reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--primary)); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 700; font-size: 0.9rem; }
@@ -728,8 +880,12 @@
         .map-card iframe { width: 100%; height: 100%; display: block; border: 0; }
 
         /* Footer */
-        footer { background: #0F172A; color: #ffffff; padding: 64px 0 32px; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 48px; }
+        footer { background: #0a192f; color: #ffffff; padding: 80px 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 64px; margin-bottom: 48px; }
+
+        @media (max-width: 1024px) {
+            .footer-grid { gap: 48px; }
+        }
         .footer-col h4 { color: #ffffff; margin-bottom: 24px; font-size: 1rem; }
         .footer-links li { margin-bottom: 12px; font-size: 0.85rem; opacity: 0.8; color: #94A3B8; }
         .social-links { display: flex; gap: 12px; margin-top: 20px; }
@@ -860,9 +1016,8 @@
 <body>
 
     <div class="bg-animation">
-        <div class="bg-line-animated"></div>
-        <div class="bg-line-animated"></div>
-        <div class="bg-line-animated"></div>
+        <div class="flowing-wave"></div>
+        <div class="flowing-wave"></div>
     </div>
 
     <div id="toast">✅ Appointment Requested!</div>
@@ -909,22 +1064,22 @@
         </svg>
         <div class="hero-bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
         <div class="container hero-inner">
-            <div class="hero-content reveal">
+            <div class="hero-content reveal reveal-left">
                 <div class="badge-pill"><div class="dot-pulse"></div>Best Dermatologist in Mangaluru</div>
                 <h1>Expert <span>Skin & Hair</span> Care You Deserve</h1>
                 <p class="hero-sub">Led by Dr. Prashanth R Kamath, Skin 360 offers advanced solutions for lasting radiance and confidence.</p>
                 <div class="hero-stats">
-                    <div class="stat-item"><h3 class="counter" data-target="228">0</h3><p>Patients</p></div>
-                    <div class="stat-item"><h3 class="counter" data-target="9">0</h3><p>Years Exp</p></div>
-                    <div class="stat-item"><h3>4.7⭐</h3><p>Rating</p></div>
-                </div>
+                        <div class="stat-item"><h3 class="counter" data-target="10000">0</h3><p>Patients</p></div>
+                        <div class="stat-item"><h3 class="counter" data-target="12">0</h3><p>Years Exp</p></div>
+                        <div class="stat-item"><h3>4.7⭐</h3><p>Rating</p></div>
+                    </div>
                 <div class="hero-btns">
                     <a href="#appointment" class="btn btn-primary"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
                     <a href="https://wa.me/919738287177" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     <a href="tel:+919738287177" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
                 </div>
             </div>
-            <div class="hero-right reveal">
+            <div class="hero-right reveal reveal-right">
                 <div class="doctor-card">
                     <div class="doc-header">
                         <div class="avatar-box">
@@ -942,7 +1097,7 @@
                     </div>
                     <div class="tag-row">
                         <span class="tag">📍 Kodailbail</span>
-                        <span class="tag">🎓 9+ Years Exp</span>
+                        <span class="tag">🎓 12+ Years Exp</span>
                         <span class="tag">🔬 Laser Specialist</span>
                     </div>
                 </div>
@@ -965,37 +1120,37 @@
                 <p>Advanced medical and cosmetic treatments tailored to you.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card reveal">
+                <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">🩺</div>
                     <h3>General Consultation</h3>
                     <p>Expert diagnosis for all skin, hair, and nail concerns.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">🔬</div>
                     <h3>Skin Disease</h3>
                     <p>Evidence-based treatment for chronic skin conditions.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">💇‍♀️</div>
                     <h3>Hair Care</h3>
                     <p>Advanced solutions for hair loss and scalp disorders.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">⚡</div>
                     <h3>Laser Removal</h3>
                     <p>FDA-approved permanent hair reduction technology.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">✨</div>
                     <h3>Skin Polishing</h3>
                     <p>Microdermabrasion for radiant and smooth skin.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">🌟</div>
                     <h3>Advanced Care</h3>
                     <p>Chemical peels, PRP, and specialized anti-ageing.</p>
@@ -1014,7 +1169,7 @@
             </div>
             <div class="ba-grid-portrait">
                 <!-- Card 1 -->
-                <div class="ba-card-portrait reveal">
+                <div class="ba-card-portrait reveal reveal-left">
                     <div class="ba-portrait-slider" data-ba-slider>
                         <div class="slider-image before-image"><img src="before11.jpg" alt="Before Acne"></div>
                         <div class="slider-image after-image"><img src="after11.jpg" alt="After Acne"></div>
@@ -1027,7 +1182,7 @@
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="ba-card-portrait reveal">
+                <div class="ba-card-portrait reveal reveal-right">
                     <div class="ba-portrait-slider" data-ba-slider>
                         <div class="slider-image before-image"><img src="before22.jpg" alt="Before Hair"></div>
                         <div class="slider-image after-image"><img src="after22.jpg" alt="After Hair"></div>
@@ -1043,15 +1198,13 @@
         </div>
     </section>
 
-    <!-- 6. TRUST -->
-    <section class="trust section-padding" id="trust">
-        <div class="container">
-            <div class="trust-grid">
-                <div class="trust-stat-card reveal"><span>👨‍⚕️</span><h2 class="counter" data-target="9">0</h2><p>Years Exp</p></div>
-                <div class="trust-stat-card reveal"><span>�</span><h2 class="counter" data-target="228">0</h2><p>Patients</p></div>
-                <div class="trust-stat-card reveal"><span>⚡</span><h2 class="counter" data-target="6">0</h2><p>Treatments</p></div>
-                <div class="trust-stat-card reveal"><span>🏥</span><h2 class="counter" data-target="1">0</h2><p>Clinic</p></div>
-            </div>
+    <!-- 6. TRUST (FULL WIDTH) -->
+    <section class="trust" id="trust">
+        <div class="trust-grid">
+            <div class="trust-stat-card reveal reveal-zoom"><h2 class="counter" data-target="12">0</h2><p>Years Exp</p></div>
+            <div class="trust-stat-card reveal reveal-zoom"><h2 class="counter" data-target="10000">0</h2><p>Patients</p></div>
+            <div class="trust-stat-card reveal reveal-zoom"><h2 class="counter" data-target="6">0</h2><p>Treatments</p></div>
+            <div class="trust-stat-card reveal reveal-zoom"><h2 class="counter" data-target="1">0</h2><p>Clinic</p></div>
         </div>
     </section>
 
@@ -1079,21 +1232,21 @@
     <section class="testimonials section-padding" id="testimonials">
         <div class="container">
             <div class="testimonial-grid">
-                <div class="review-card reveal">
+                <div class="review-card reveal reveal-zoom">
                     <p class="review-text">"Best doctor, my skin problem solved in one tablet. Explains the issue very clearly."</p>
                     <div class="reviewer">
                         <div class="reviewer-avatar">J</div>
                         <div class="reviewer-info"><h4>Jyothi</h4><span>Verified Patient</span></div>
                     </div>
                 </div>
-                <div class="review-card reveal">
+                <div class="review-card reveal reveal-zoom">
                     <p class="review-text">"Highly recommend this place. The treatment for hair loss was very effective and visible."</p>
                     <div class="reviewer">
                         <div class="reviewer-avatar">SA</div>
                         <div class="reviewer-info"><h4>Swasthik Anchan</h4><span>Verified Patient</span></div>
                     </div>
                 </div>
-                <div class="review-card reveal">
+                <div class="review-card reveal reveal-zoom">
                     <p class="review-text">"One of the best doctors in town for hair and skin care. Very professional staff."</p>
                     <div class="reviewer">
                         <div class="reviewer-avatar">SB</div>
@@ -1102,7 +1255,7 @@
                 </div>
             </div>
             <div class="rating-summary reveal">
-                <div class="summary-score"><h2>4.7</h2><p>228+ Reviews</p></div>
+                <div class="summary-score"><h2>4.7</h2><p>10000+ Reviews</p></div>
                 <div class="rating-bars">
                     <div class="bar-item"><span>5★</span><div class="bar-bg"><div class="bar-fill" style="width: 75%"></div></div></div>
                     <div class="bar-item"><span>4★</span><div class="bar-bg"><div class="bar-fill" style="width: 18%"></div></div></div>
@@ -1160,8 +1313,8 @@
                         <h3>📍 Location</h3>
                         <p>Kodailbail, Mangaluru, Karnataka – 575003</p>
                         <div style="margin: 16px 0;">
-                            <div class="hour-row"><span>Mon–Fri</span><strong>10:30 AM - 7:00 PM</strong></div>
-                            <div class="hour-row"><span>Saturday</span><strong>10:30 AM - 4:00 PM</strong></div>
+                            <div class="hour-row"><i class="fa-regular fa-stopwatch" style="margin-right: 8px; font-size: 0.8rem; color: var(--primary);"></i><span>Mon–Fri</span><strong>10:30 AM - 7:00 PM</strong></div>
+                            <div class="hour-row"><i class="fa-regular fa-stopwatch" style="margin-right: 8px; font-size: 0.8rem; color: var(--primary);"></i><span>Saturday</span><strong>10:30 AM - 4:00 PM</strong></div>
                         </div>
                         <a href="tel:+919738287177" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call</a>
                         <a href="https://wa.me/919738287177" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
