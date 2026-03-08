@@ -198,7 +198,7 @@
         }
 
         h1 { 
-            font-size: clamp(2.4rem, 5vw, 4.2rem); 
+            font-size: clamp(2.6rem, 5.4vw, 4.6rem); 
             line-height: 1.1; 
             margin-bottom: 20px; 
             font-family: var(--font-headings); 
@@ -207,7 +207,7 @@
             letter-spacing: -0.03em;
         }
         h2 { 
-            font-size: clamp(2rem, 4vw, 3.2rem); 
+            font-size: clamp(2.1rem, 4.2vw, 3.4rem); 
             margin-bottom: 16px; 
             font-family: var(--font-headings); 
             color: var(--dark); 
@@ -271,12 +271,12 @@
         }
 
         .section-padding {
-            padding: 120px 0;
+            padding: 100px 0;
         }
 
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-            .section-padding { padding: 80px 0; }
+            .section-padding { padding: 70px 0; }
             html, body { font-size: 16px; }
         }
 
@@ -296,6 +296,23 @@
             margin: 0 auto;
             color: var(--light-gray);
             font-size: 0.95rem;
+        }
+        .section-header h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        .section-header h2::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 64px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0.9;
         }
 
         /* Refined Scroll Reveal System */
@@ -608,7 +625,7 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 95vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             padding: 120px 0 80px;
@@ -616,7 +633,7 @@
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 100px 0 60px; min-height: 90vh; }
+            .hero { padding: 100px 0 60px; min-height: 80vh; }
         }
 
         .hero-bg-orbs {
@@ -689,13 +706,38 @@
         .hero-stats {
             display: flex;
             gap: 24px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             font-family: var(--font-ui);
             font-size: 0.85rem;
         }
 
         .stat-item h3 { font-size: 1.5rem; margin-bottom: 2px; color: var(--dark); }
         .stat-item p { color: var(--light-gray); font-size: 0.75rem; }
+
+        .hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+            margin-bottom: 8px;
+            font-family: var(--font-ui);
+            font-size: 0.78rem;
+        }
+
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: rgba(248, 250, 252, 0.9);
+        }
+
+        .hero-trust-item i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
 
         .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
         .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #0F172A; }
@@ -814,7 +856,7 @@
         @keyframes float-chip { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
 
         /* Services Section */
-        .services { background: var(--background); }
+        .services { background: #f7fbff; }
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
         .service-card { background: var(--card-bg); padding: 40px 32px; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
 
@@ -1154,7 +1196,7 @@
             .hero-btns { flex-direction: column; width: 100%; max-width: 400px; }
             .hero-btns .btn { width: 100%; }
             .form-row { grid-template-columns: 1fr; }
-            .section-padding { padding: 60px 0; }
+            .section-padding { padding: 50px 0; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
         }
@@ -1315,6 +1357,24 @@
                     <div class="stat-item">
                         <h3>4.7⭐</h3>
                         <p>Average Google Rating</p>
+                    </div>
+                </div>
+                <div class="hero-trust">
+                    <div class="hero-trust-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>4.7★ rating</span>
+                    </div>
+                    <div class="hero-trust-item">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span>228+ patient reviews</span>
+                    </div>
+                    <div class="hero-trust-item">
+                        <i class="fa-solid fa-briefcase-medical"></i>
+                        <span>9+ years clinical experience</span>
+                    </div>
+                    <div class="hero-trust-item">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <span>Specialist dermatologist</span>
                     </div>
                 </div>
                 <div class="hero-btns">
