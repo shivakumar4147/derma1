@@ -2088,7 +2088,7 @@
             }
         }, { passive: false });
         window.addEventListener('mouseup', stopBADragging);
-        window.addEventListener('touchend', stopBADragging);
+        window.addEventListener('touchend', stopBADragging); 
 
         // Clinic Gallery Slider Logic (lightweight)
         function initGallerySlider() {
@@ -2097,7 +2097,7 @@
             const slides = Array.from(track.children);
             const slideCount = slides.length;
             let currentIdx = 0;
-            let slidesPerView = window.innerWidth > 768 ? 3 : 1;
+            let slidesPerView = window.innerWidth > 768 ? 3 : 1.5;
 
             function updateSlider() {
                 const moveBy = 100 / slidesPerView;
