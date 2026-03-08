@@ -228,6 +228,7 @@
             z-index: -1; /* behind all content */ 
             pointer-events: none; 
             opacity: 0.6;
+            color: rgba(179, 201, 230, 1);
         }
 
         /* Premium Handcrafted Background */
@@ -1597,7 +1598,7 @@
         }
         
         let t = 0;
-        let waveSpeed = 0.012;
+        let waveSpeed = 0.004;
         
         function drawWave() {
             ctx.clearRect(0, 0, canvasW, canvasH);
@@ -1610,7 +1611,7 @@
                 const cpY = (points[i-1].y + points[i].y)/2;
                 ctx.quadraticCurveTo(points[i-1].x, points[i-1].y, cpX, cpY);
             }
-            ctx.strokeStyle = '#0c4498';
+            ctx.strokeStyle = 'rgba(179, 201, 230, 1)';
             ctx.lineWidth = 1 + Math.sin(t*5)*0.5;
             ctx.stroke();
             
@@ -1622,7 +1623,7 @@
                 const cpY = (points[i+1].y + points[i].y)/2;
                 ctx.quadraticCurveTo(points[i+1].x, points[i+1].y, cpX, cpY);
             }
-            ctx.strokeStyle = '#0c4498';
+            ctx.strokeStyle = 'rgba(179, 201, 230, 1)';
             ctx.lineWidth = 2 + Math.sin(t*5)*1;
             ctx.stroke();
             
