@@ -100,14 +100,16 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Reset & Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
             scroll-behavior: smooth;
         }
 
@@ -117,7 +119,8 @@
             color: var(--mid-gray);
             line-height: 1.5;
             font-size: 0.88rem;
-            overflow-x: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         img, iframe {
@@ -564,25 +567,78 @@
         .service-card p { font-size: 0.88rem; margin-bottom: 20px; line-height: 1.6; color: var(--mid-gray); }
         .learn-more { color: var(--primary); font-weight: 700; font-family: var(--font-ui); font-size: 0.85rem; display: flex; align-items: center; gap: 4px; }
 
-        /* Before/After Gallery */
-        .gallery { background: var(--card-bg); color: var(--dark); }
-        .gallery h2, .gallery p { color: var(--dark); }
-        .ba-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .ba-card { background: var(--background); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
-        .slider-wrapper { position: relative; width: 100%; height: 220px; overflow: hidden; cursor: ew-resize; user-select: none; }
-        .slider-wrapper.dragging { cursor: grabbing; }
-        .slider-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; pointer-events: none; }
-        .before-image { background: #f1f5f9; }
-        .after-image { background: var(--primary-light); width: 50%; z-index: 2; border-right: 2px solid var(--primary); pointer-events: none; }
-        .slider-handle { position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; background: var(--primary); border-radius: 50%; transform: translate(-50%, -50%); z-index: 3; display: flex; align-items: center; justify-content: center; color: #ffffff; box-shadow: 0 0 15px rgba(0,0,0,0.2); font-size: 1.2rem; pointer-events: none; transition: transform 0.2s; }
-        .slider-wrapper:hover .slider-handle { transform: translate(-50%, -50%) scale(1.1); }
-        .slider-wrapper.dragging .slider-handle { transform: translate(-50%, -50%) scale(0.9); }
-        .pill-label { position: absolute; bottom: 12px; padding: 4px 12px; background: rgba(15, 23, 42, 0.7); border-radius: 9999px; font-family: var(--font-ui); font-weight: 700; font-size: 0.65rem; z-index: 4; color: #ffffff; backdrop-filter: blur(4px); }
-        .label-before { left: 12px; } .label-after { right: 12px; }
-        .ba-info { padding: 20px; }
-        .ba-tag { display: inline-block; background: var(--primary-light); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; }
-        .ba-info h3 { font-size: 1.1rem; margin-bottom: 8px; }
-        .ba-info p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.5; }
+        /* Before/After Gallery - Portrait with Side Info */
+        .ba-grid-portrait { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .ba-card-portrait { 
+            background: var(--background); 
+            border-radius: var(--radius-lg); 
+            overflow: hidden; 
+            border: 1px solid var(--border); 
+            box-shadow: var(--shadow-sm); 
+            display: flex;
+            align-items: stretch;
+            height: 350px;
+        }
+        
+        .ba-portrait-slider { 
+            flex: 0 0 55%; 
+            position: relative; 
+            overflow: hidden; 
+            cursor: ew-resize; 
+            user-select: none; 
+            container-type: inline-size; 
+        }
+        .ba-portrait-slider.dragging { cursor: grabbing; }
+        
+        .slider-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+        .slider-image img { width: 100cqw; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; max-width: none; }
+        
+        .before-image { background: #f1f5f9; z-index: 1; }
+        .after-image { width: 50%; z-index: 2; border-right: 2px solid var(--primary); overflow: hidden; }
+        
+        .slider-handle { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            width: 36px; 
+            height: 36px; 
+            background: var(--primary); 
+            border-radius: 50%; 
+            transform: translate(-50%, -50%); 
+            z-index: 3; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #ffffff; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+            font-size: 0.9rem; 
+            pointer-events: none; 
+            transition: transform 0.2s; 
+        }
+        
+        .ba-portrait-info { 
+            flex: 1; 
+            padding: 24px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            background: var(--card-bg);
+        }
+        
+        .ba-tag { display: inline-block; background: var(--primary-light); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; width: fit-content; }
+        .ba-portrait-info h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .ba-portrait-info p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.5; }
+
+        @media (max-width: 968px) {
+            .ba-grid-portrait { grid-template-columns: 1fr; }
+            .ba-card-portrait { height: auto; min-height: 300px; }
+        }
+
+        @media (max-width: 480px) {
+            .ba-card-portrait { flex-direction: column; height: auto; }
+            .ba-portrait-slider { flex: 0 0 250px; width: 100%; }
+            .ba-portrait-info { padding: 20px; }
+        }
 
         /* Trust Section */
         .trust { background: var(--background); }
@@ -590,10 +646,19 @@
         .trust-stat-card { background: var(--card-bg); padding: 24px; border-radius: var(--radius-md); text-align: center; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
         .trust-stat-card span { font-size: 2rem; margin-bottom: 12px; display: block; }
         .trust-stat-card h2 { font-size: 1.8rem; color: var(--primary); margin: 8px 0; }
-        .facility-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .check-list { display: flex; flex-direction: column; gap: 14px; }
-        .check-item { display: flex; align-items: center; gap: 12px; background: var(--card-bg); padding: 16px 20px; border-radius: 14px; font-size: 0.9rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); color: var(--mid-gray); font-weight: 500; }
-        .check-icon { width: 24px; height: 24px; background: var(--accent); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.8rem; }
+        /* Clinic Gallery Slider */
+        .clinic-gallery { background: var(--background); overflow: hidden; }
+        .gallery-container { position: relative; width: 100%; max-width: 1100px; margin: 0 auto; overflow: hidden; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+        .gallery-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .gallery-slide { flex: 0 0 33.333%; aspect-ratio: 4 / 3; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--primary); border-right: 1px solid var(--border); }
+        
+        @media (max-width: 768px) {
+            .gallery-slide { flex: 0 0 100%; aspect-ratio: 16 / 9; }
+        }
+        
+        .gallery-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
+        .gallery-dot { width: 10px; height: 10px; background: rgba(15, 23, 42, 0.2); border-radius: 50%; cursor: pointer; transition: var(--transition); }
+        .gallery-dot.active { background: var(--primary); width: 25px; border-radius: 5px; }
 
         /* Testimonials */
         .testimonials { background: var(--card-bg); }
@@ -672,7 +737,7 @@
             .floating-chips { display: none; }
             .hero { padding-top: 100px; padding-bottom: 60px; }
             
-            .facility-row { grid-template-columns: 1fr; gap: 30px; }
+            .clinic-tech-row { grid-template-columns: 1fr; gap: 30px; }
             .appt-layout { grid-template-columns: 1fr; gap: 40px; }
             .contact-layout { grid-template-columns: 1fr; }
         }
@@ -700,37 +765,39 @@
               .trust-grid { grid-template-columns: 1fr; gap: 12px; }
               
               /* Smaller Cards on Mobile */
-              .service-card { padding: 20px 16px; }
+              .service-card { padding: 20px 16px; width: 100%; box-sizing: border-box; }
               .service-card h3 { font-size: 1rem; margin-bottom: 8px; }
               .service-card p { font-size: 0.82rem; margin-bottom: 12px; }
               .icon-box { width: 40px; height: 40px; font-size: 1.3rem; margin-bottom: 12px; }
 
-              .slider-wrapper { height: 160px; }
+              .auto-slider { height: auto; max-width: 100%; box-sizing: border-box; }
+              .slider-track { width: 100%; }
+              .photo-item { flex: 0 0 100%; width: 100%; height: 160px; aspect-ratio: auto; }
               .slider-image { font-size: 2.5rem; }
               .ba-info { padding: 12px; }
               .ba-info h3 { font-size: 0.95rem; }
               .ba-info p { font-size: 0.78rem; }
 
-              .trust-stat-card { padding: 16px; }
+              .trust-stat-card { padding: 16px; width: 100%; }
               .trust-stat-card h2 { font-size: 1.4rem; }
               .trust-stat-card span { font-size: 1.5rem; margin-bottom: 8px; }
 
-              .review-card { padding: 16px; }
+              .review-card { padding: 16px; width: 100%; }
               .review-text { font-size: 0.82rem; margin-bottom: 16px; }
               .reviewer-avatar { width: 36px; height: 36px; font-size: 0.8rem; }
               .reviewer-info h4 { font-size: 0.85rem; }
 
-              .doctor-card { padding: 16px; margin-bottom: 20px; }
+              .doctor-card { padding: 16px; margin-bottom: 20px; width: 100%; max-width: 100%; box-sizing: border-box; }
                .doc-header { gap: 12px; margin-bottom: 12px; }
                .avatar-box { width: 60px; height: 60px; }
                .avatar-box span { font-size: 1.8rem; }
                .doc-info h2 { font-size: 1.1rem; }
                .rating-row { padding-bottom: 12px; margin-bottom: 12px; }
 
-               .map-card { height: 280px; }
+               .map-card { height: 280px; width: 100%; }
                
-               .sticky-cta { padding: 10px 8px; gap: 6px; }
-              .sticky-cta .btn { font-size: 0.72rem; padding: 10px 4px; min-width: 0; }
+               .sticky-cta { padding: 10px 8px; gap: 6px; width: 100%; left: 0; right: 0; margin: 0; box-sizing: border-box; }
+              .sticky-cta .btn { font-size: 0.7rem; padding: 10px 4px; min-width: 0; flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
               
               .logo-text h2 { font-size: 0.95rem; }
              .logo-icon { width: 30px; height: 30px; font-size: 0.8rem; }
@@ -742,6 +809,13 @@
                  width: calc(100% - 24px);
                  height: 56px;
                  border-radius: 16px;
+                 max-width: calc(100% - 24px);
+                 box-sizing: border-box;
+             }
+             .nav-inner {
+                 padding: 0 12px;
+                 width: 100%;
+                 box-sizing: border-box;
              }
              nav.scrolled {
                  top: 8px;
@@ -787,7 +861,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Results</a></li>
+                <li><a href="#transformations">Results</a></li>
                 <li><a href="#trust">About</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -801,7 +875,7 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="#services">Services</a>
-        <a href="#gallery">Results</a>
+        <a href="#transformations">Results</a>
         <a href="#trust">About</a>
         <a href="#testimonials">Reviews</a>
         <a href="#contact">Contact</a>
@@ -912,68 +986,38 @@
         </div>
     </section>
 
-    <!-- 5. BEFORE & AFTER -->
-    <section class="gallery section-padding" id="gallery">
+    <!-- 5. TRANSFORMATIONS (PORTRAIT) -->
+    <section class="transformations section-padding" id="transformations">
         <div class="container">
-            <div class="section-header reveal" style="text-align: center; margin-bottom: 32px;">
-                <h2>Transformations</h2>
-                <p>Real results from our verified treatment protocols.</p>
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 48px;">
+                <h2>Real Transformations</h2>
+                <p>Visible results from our advanced clinical protocols.</p>
             </div>
-            <div class="ba-grid">
-                <div class="ba-card reveal">
-                    <div class="slider-wrapper" data-slider>
-                        <div class="slider-image before-image">😔</div>
-                        <div class="slider-image after-image">😊</div>
+            <div class="ba-grid-portrait">
+                <!-- Card 1 -->
+                <div class="ba-card-portrait reveal">
+                    <div class="ba-portrait-slider" data-ba-slider>
+                        <div class="slider-image before-image"><img src="images - Copy.jpg" alt="Before Acne"></div>
+                        <div class="slider-image after-image"><img src="images.jpg" alt="After Acne"></div>
                         <div class="slider-handle">⟷</div>
-                        <div class="pill-label label-before">BEFORE</div>
-                        <div class="pill-label label-after">AFTER</div>
                     </div>
-                    <div class="ba-info">
-                        <span class="ba-tag">Acne</span>
-                        <h3>Clearer Skin Journey</h3>
-                        <p>Visible reduction in active acne and scarring.</p>
+                    <div class="ba-portrait-info">
+                        <span class="ba-tag">Acne Control</span>
+                        <h3>Clearer Skin</h3>
+                        <p>Significant reduction in active inflammatory acne and improvement in skin texture after 4 sessions.</p>
                     </div>
                 </div>
-                <div class="ba-card reveal">
-                    <div class="slider-wrapper" data-slider>
-                        <div class="slider-image before-image">💇‍♂️</div>
-                        <div class="slider-image after-image">🦁</div>
+                <!-- Card 2 -->
+                <div class="ba-card-portrait reveal">
+                    <div class="ba-portrait-slider" data-ba-slider>
+                        <div class="slider-image before-image"><img src="images - Copy.jpg" alt="Before Hair"></div>
+                        <div class="slider-image after-image"><img src="images.jpg" alt="After Hair"></div>
                         <div class="slider-handle">⟷</div>
-                        <div class="pill-label label-before">BEFORE</div>
-                        <div class="pill-label label-after">AFTER</div>
                     </div>
-                    <div class="ba-info">
-                        <span class="ba-tag">Hair Loss</span>
-                        <h3>Regrowth Success</h3>
-                        <p>Natural restoration using multi-step protocol.</p>
-                    </div>
-                </div>
-                <div class="ba-card reveal">
-                    <div class="slider-wrapper" data-slider>
-                        <div class="slider-image before-image">🌵</div>
-                        <div class="slider-image after-image">🍑</div>
-                        <div class="slider-handle">⟷</div>
-                        <div class="pill-label label-before">BEFORE</div>
-                        <div class="pill-label label-after">AFTER</div>
-                    </div>
-                    <div class="ba-info">
-                        <span class="ba-tag">Laser</span>
-                        <h3>Permanent Smoothness</h3>
-                        <p>Clean finish after 6 sessions of advanced laser.</p>
-                    </div>
-                </div>
-                <div class="ba-card reveal">
-                    <div class="slider-wrapper" data-slider>
-                        <div class="slider-image before-image">🌑</div>
-                        <div class="slider-image after-image">🌕</div>
-                        <div class="slider-handle">⟷</div>
-                        <div class="pill-label label-before">BEFORE</div>
-                        <div class="pill-label label-after">AFTER</div>
-                    </div>
-                    <div class="ba-info">
-                        <span class="ba-tag">Polishing</span>
-                        <h3>Radiant Glow</h3>
-                        <p>Brightened complexion after one session.</p>
+                    <div class="ba-portrait-info">
+                        <span class="ba-tag">Hair Restoration</span>
+                        <h3>Density Growth</h3>
+                        <p>Visible improvement in hair density and scalp coverage using our specialized PRP & Growth Factor protocol.</p>
                     </div>
                 </div>
             </div>
@@ -985,21 +1029,29 @@
         <div class="container">
             <div class="trust-grid">
                 <div class="trust-stat-card reveal"><span>👨‍⚕️</span><h2 class="counter" data-target="9">0</h2><p>Years Exp</p></div>
-                <div class="trust-stat-card reveal"><span>😊</span><h2 class="counter" data-target="228">0</h2><p>Patients</p></div>
+                <div class="trust-stat-card reveal"><span>�</span><h2 class="counter" data-target="228">0</h2><p>Patients</p></div>
                 <div class="trust-stat-card reveal"><span>⚡</span><h2 class="counter" data-target="6">0</h2><p>Treatments</p></div>
                 <div class="trust-stat-card reveal"><span>🏥</span><h2 class="counter" data-target="1">0</h2><p>Clinic</p></div>
             </div>
-            <div class="facility-row">
-                <div class="svg-left reveal">
-                    <svg viewBox="0 0 200 200" width="100%" height="200"><circle cx="100" cy="100" r="80" fill="#0EA5E9" opacity="0.1"/><path d="M100 40C66.8 40 40 66.8 40 100s26.8 60 60 60 60-26.8 60-60-26.8-60-60-60zm15 75H85V85h30v30z" fill="#0EA5E9"/></svg>
+        </div>
+    </section>
+
+    <!-- 6.5 CLINIC GALLERY -->
+    <section class="clinic-gallery section-padding" id="clinic-gallery">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 40px;">
+                <h2>Our Clinic Gallery</h2>
+                <p>A glimpse into our modern facilities and care environment.</p>
+            </div>
+            <div class="gallery-container reveal">
+                <div class="gallery-track" id="galleryTrack">
+                    <div class="gallery-slide">🏥</div>
+                    <div class="gallery-slide">🛋️</div>
+                    <div class="gallery-slide">🔬</div>
+                    <div class="gallery-slide">👩‍⚕️</div>
+                    <div class="gallery-slide">✨</div>
                 </div>
-                <div class="check-list reveal">
-                    <div class="check-item"><div class="check-icon">✓</div>Advanced Laser Technology</div>
-                    <div class="check-item"><div class="check-icon">✓</div>Comfortable Modern Clinic</div>
-                    <div class="check-item"><div class="check-icon">✓</div>Personalised Treatment Plans</div>
-                    <div class="check-item"><div class="check-icon">✓</div>Online Booking via HealthPlix</div>
-                    <div class="check-item"><div class="check-icon">✓</div>Post-Treatment Support</div>
-                </div>
+                <div class="gallery-dots" id="galleryDots"></div>
             </div>
         </div>
     </section>
@@ -1150,47 +1202,6 @@
         }, { threshold: 0.12 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        let activeSlider = null;
-
-        document.querySelectorAll('[data-slider]').forEach(slider => {
-            const startDragging = (e) => {
-                activeSlider = slider;
-                slider.classList.add('dragging');
-                updateSlider(e.clientX || e.touches[0].clientX);
-            };
-            slider.addEventListener('mousedown', startDragging);
-            slider.addEventListener('touchstart', startDragging, { passive: true });
-        });
-
-        const updateSlider = (clientX) => {
-            if (!activeSlider) return;
-            const handle = activeSlider.querySelector('.slider-handle');
-            const after = activeSlider.querySelector('.after-image');
-            const rect = activeSlider.getBoundingClientRect();
-            let x = clientX - rect.left;
-            let pos = (x / rect.width) * 100;
-            pos = Math.max(0, Math.min(100, pos));
-            handle.style.left = `${pos}%`;
-            after.style.width = `${pos}%`;
-        };
-
-        const stopDragging = () => {
-            if (activeSlider) {
-                activeSlider.classList.remove('dragging');
-                activeSlider = null;
-            }
-        };
-
-        window.addEventListener('mousemove', (e) => updateSlider(e.clientX));
-        window.addEventListener('touchmove', (e) => {
-            if (activeSlider) {
-                e.preventDefault();
-                updateSlider(e.touches[0].clientX);
-            }
-        }, { passive: false });
-        window.addEventListener('mouseup', stopDragging);
-        window.addEventListener('touchend', stopDragging);
-
         const countObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
@@ -1207,6 +1218,106 @@
             });
         }, { threshold: 0.5 });
         document.querySelectorAll('.counter').forEach(el => countObserver.observe(el));
+
+        // Before/After Slider Logic
+        let activeBASlider = null;
+
+        document.querySelectorAll('[data-ba-slider]').forEach(slider => {
+            const startDragging = (e) => {
+                activeBASlider = slider;
+                slider.classList.add('dragging');
+                updateBASlider(e.clientX || e.touches[0].clientX);
+            };
+            slider.addEventListener('mousedown', startDragging);
+            slider.addEventListener('touchstart', startDragging, { passive: true });
+        });
+
+        function updateBASlider(clientX) {
+            if (!activeBASlider) return;
+            const handle = activeBASlider.querySelector('.slider-handle');
+            const after = activeBASlider.querySelector('.after-image');
+            const rect = activeBASlider.getBoundingClientRect();
+            let x = clientX - rect.left;
+            let pos = (x / rect.width) * 100;
+            pos = Math.max(0, Math.min(100, pos));
+            handle.style.left = `${pos}%`;
+            after.style.width = `${pos}%`;
+        }
+
+        const stopBADragging = () => {
+            if (activeBASlider) {
+                activeBASlider.classList.remove('dragging');
+                activeBASlider = null;
+            }
+        };
+
+        window.addEventListener('mousemove', (e) => updateBASlider(e.clientX));
+        window.addEventListener('touchmove', (e) => {
+            if (activeBASlider) {
+                e.preventDefault();
+                updateBASlider(e.touches[0].clientX);
+            }
+        }, { passive: false });
+        window.addEventListener('mouseup', stopBADragging);
+        window.addEventListener('touchend', stopBADragging);
+
+        // Clinic Gallery Slider Logic
+        function initGallerySlider() {
+            const track = document.getElementById('galleryTrack');
+            const dotsContainer = document.getElementById('galleryDots');
+            const slides = Array.from(track.children);
+            const slideCount = slides.length;
+            let currentIdx = 0;
+            let slidesPerView = window.innerWidth > 768 ? 3 : 1;
+
+            function updateSlider() {
+                const moveBy = 100 / slidesPerView;
+                track.style.transform = `translateX(-${currentIdx * moveBy}%)`;
+                
+                const dots = dotsContainer.querySelectorAll('.gallery-dot');
+                dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+            }
+
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                const dotsToCreate = window.innerWidth > 768 ? slideCount - 2 : slideCount;
+                for (let i = 0; i < dotsToCreate; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('gallery-dot');
+                    if (i === currentIdx) dot.classList.add('active');
+                    dot.onclick = () => { currentIdx = i; updateSlider(); resetInterval(); };
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function nextSlide() {
+                const limit = window.innerWidth > 768 ? slideCount - 2 : slideCount;
+                currentIdx = (currentIdx + 1) % limit;
+                updateSlider();
+            }
+
+            let interval = setInterval(nextSlide, 5000);
+
+            function resetInterval() {
+                clearInterval(interval);
+                interval = setInterval(nextSlide, 5000);
+            }
+
+            window.addEventListener('resize', () => {
+                const newPerView = window.innerWidth > 768 ? 3 : 1;
+                if (newPerView !== slidesPerView) {
+                    slidesPerView = newPerView;
+                    currentIdx = 0;
+                    createDots();
+                    updateSlider();
+                }
+            });
+
+            createDots();
+            updateSlider();
+        }
+
+        initGallerySlider();
 
         document.getElementById('appointmentForm').onsubmit = (e) => {
             e.preventDefault();
