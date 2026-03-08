@@ -6,12 +6,12 @@
     
     <!-- SEO & Meta Tags -->
     <title>Best Dermatologist in Mangaluru | Skin 360 Dermatology Clinic</title>
-    <meta name="description" content="Skin 360 Dermatology Clinic in Mangaluru provides expert treatment for skin diseases, hair problems, laser treatments, and cosmetic dermatology by Dr. Prashanth R Kamath. Book a consultation today.">
+    <meta name="description" content="Skin 360 Dermatology Clinic in Mangaluru offers expert treatment for skin diseases, hair loss, laser treatments, and cosmetic dermatology by Dr. Prashanth R Kamath. Book a consultation today.">
     <meta name="keywords" content="Best Dermatologist in Mangaluru, Skin Specialist Mangaluru, Dermatology Clinic Kodailbail, Hair Loss Treatment Mangaluru, Laser Hair Removal Mangaluru, Skin Polishing Mangaluru, Acne Treatment Mangaluru, Dermatologist near me, Skin 360 Clinic">
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Best Dermatologist in Mangaluru | Skin 360 Dermatology Clinic">
-    <meta property="og:description" content="Skin 360 Dermatology Clinic in Mangaluru provides expert treatment for skin diseases, hair problems, laser treatments, and cosmetic dermatology by Dr. Prashanth R Kamath. Book a consultation today.">
+    <meta property="og:description" content="Skin 360 Dermatology Clinic in Mangaluru offers expert treatment for skin diseases, hair loss, laser treatments, and cosmetic dermatology by Dr. Prashanth R Kamath. Book a consultation today.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://skin360mangalore.com">
     <meta property="og:image" content="https://skin360mangalore.com/og-image.jpg">
@@ -22,7 +22,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Best Dermatologist in Mangaluru | Skin 360 Dermatology Clinic">
-    <meta name="twitter:description" content="Skin 360 Dermatology Clinic in Mangaluru provides expert treatment for skin diseases, hair problems, laser treatments, and cosmetic dermatology by Dr. Prashanth R Kamath. Book a consultation today.">
+    <meta name="twitter:description" content="Skin 360 Dermatology Clinic in Mangaluru offers expert treatment for skin diseases, hair loss, laser treatments, and cosmetic dermatology by Dr. Prashanth R Kamath. Book a consultation today.">
     <meta name="twitter:image" content="https://skin360mangalore.com/og-image.jpg">
 
     <!-- Structured Data (JSON-LD) -->
@@ -217,6 +217,7 @@
         
         h1 span, h2 span {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
@@ -283,6 +284,7 @@
         /* Utility Classes */
         .text-gradient {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -469,8 +471,15 @@
             transform: scale(1.15);
         }
 
+        .hero-trust-line {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+            font-weight: 600;
+            font-family: var(--font-ui);
+        }
         .cta-urgency {
-            margin-top: 10px;
+            margin-top: 8px;
             font-size: 0.8rem;
             color: var(--accent);
             font-weight: 600;
@@ -872,8 +881,65 @@
         .chip:nth-child(2) { align-self: flex-end; animation-delay: -1s; }
         @keyframes float-chip { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
 
+        /* Section dividers (curved SVG) */
+        .section-divider {
+            width: 100%;
+            height: 60px;
+            line-height: 0;
+            overflow: hidden;
+        }
+        .section-divider svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .section-divider-down { margin-bottom: -1px; }
+        .section-divider-up { margin-top: -1px; }
+
+        /* Trust Block (4 statistic cards) */
+        .trust-block { background: #f7fbff; }
+        .trust-block-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .trust-block-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .trust-block-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(12, 68, 152, 0.12);
+            border-color: rgba(12, 68, 152, 0.15);
+        }
+        .trust-block-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 14px;
+            border-radius: 12px;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .trust-block-card h3 { font-size: 1rem; margin-bottom: 6px; }
+        .trust-block-card p { font-size: 0.8rem; color: var(--light-gray); margin: 0; }
+        @media (max-width: 968px) {
+            .trust-block-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .trust-block-grid { grid-template-columns: 1fr; }
+        }
+
         /* Services Section */
-        .services { background: #f7fbff; }
+        .services { background: #ffffff; }
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
         .service-card { background: var(--card-bg); padding: 40px 32px; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
 
@@ -889,7 +955,7 @@
         .learn-more { color: var(--primary); font-weight: 700; font-family: var(--font-ui); font-size: 0.85rem; display: flex; align-items: center; gap: 4px; }
 
         /* Detailed Services (SEO-rich) */
-        .services-detailed { background: #f9fbff; }
+        .services-detailed { background: #f7fbff; }
         .services-detailed-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 32px; }
         .service-detail {
             background: #ffffff;
@@ -913,6 +979,17 @@
             font-size: 0.86rem;
             color: var(--mid-gray);
         }
+        .service-detail-block {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border);
+        }
+        .service-detail-block strong {
+            color: var(--dark);
+            font-size: 0.82rem;
+            display: block;
+            margin-bottom: 4px;
+        }
 
         @media (max-width: 1024px) {
             .services-detailed-grid { gap: 24px; }
@@ -923,6 +1000,7 @@
         }
 
         /* Before/After Gallery - Portrait with Side Info */
+        .transformations { background: #ffffff; }
         .ba-grid-portrait { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
 
         @media (max-width: 1024px) {
@@ -1054,7 +1132,10 @@
         }
 
         /* Clinic Gallery Slider */
-        .clinic-gallery { background: var(--background); overflow: hidden; }
+        .clinic-gallery {
+            background: linear-gradient(180deg, #ffffff 0%, #f7fbff 50%, #ffffff 100%);
+            overflow: hidden;
+        }
         .gallery-container { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; overflow: hidden; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--shadow); }
         .gallery-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
         .gallery-slide { flex: 0 0 33.333%; aspect-ratio: 4 / 3; background: #f1f5f9; display: flex; align-items: center; justify-content: center; overflow: hidden; border-right: 1px solid var(--border); }
@@ -1070,7 +1151,7 @@
         .gallery-dot.active { background: var(--primary); width: 25px; border-radius: 5px; }
 
         /* Testimonials */
-        .testimonials { background: var(--card-bg); }
+        .testimonials { background: #f7fbff; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
 
         @media (max-width: 1024px) {
@@ -1151,7 +1232,7 @@
         .booking-urgency i { font-size:0.8rem; }
 
         /* Contact Section */
-        .contact { background: var(--background); }
+        .contact { background: #ffffff; }
         .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 32px; }
         .contact-card-mini { background: var(--card-bg); padding: 28px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin-bottom: 20px; border: 1px solid var(--border); }
         .contact-card-mini h3 { margin-bottom: 16px; }
@@ -1192,7 +1273,8 @@
             .hamburger { display: flex !important; }
             
             .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-            .hero-sub, .hero-stats, .hero-btns { justify-content: center; margin-left: auto; margin-right: auto; }
+            .hero-sub, .hero-stats, .hero-trust, .hero-trust-line, .hero-btns { justify-content: center; margin-left: auto; margin-right: auto; }
+            .hero-trust { display: flex; flex-wrap: wrap; justify-content: center; }
             .floating-chips { display: none; }
             .hero { padding-top: 100px; padding-bottom: 60px; }
             
@@ -1318,7 +1400,7 @@
     <nav id="navbar" aria-label="Main navigation">
         <div class="container nav-inner">
             <a href="#home" class="logo" aria-label="Skin 360 Dermatology Clinic home">
-                <img src="images (1).jpg" alt="Skin 360 Dermatology Clinic Logo">
+                <img src="images (1).jpg" alt="Skin 360 Dermatology Clinic logo - Best dermatologist in Mangaluru">
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -1356,11 +1438,10 @@
                     <div class="dot-pulse"></div>
                     Best Dermatologist in Mangaluru
                 </div>
-                <h1>Expert <span>Skin & Hair</span> Care You Deserve</h1>
+                <h1>Best <span>Dermatologist in Mangaluru</span></h1>
                 <p class="hero-sub">
-                    Led by Dr. Prashanth R Kamath, Skin 360 offers advanced dermatology treatments in Mangaluru —
-                    from acne and hair loss to laser procedures — with a clear focus on long-term results and patient comfort.
-                    If you are searching for a trusted skin specialist in Mangaluru or a skin clinic near Kodialbail Mangaluru, you are in the right place.
+                    Expert skin, hair and laser treatments by Dr. Prashanth R Kamath at Skin 360 Dermatology Clinic.
+                    From acne and hair loss to laser procedures — trusted skin specialist in Mangaluru and skin clinic near Kodailbail.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -1399,13 +1480,14 @@
                     <a href="https://wa.me/919738287177" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     <a href="tel:+919738287177" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
                 </div>
+                <p class="hero-trust-line">⭐ 4.7 Rating | 228+ Reviews | 9+ Years Experience</p>
                 <p class="cta-urgency">Limited dermatology slots today in Kodailbail — confirm yours in under 60 seconds.</p>
             </div>
             <div class="hero-right reveal reveal-right">
                 <div class="doctor-card">
                     <div class="doc-header">
                         <div class="avatar-box">
-                            <img src="download.jpg" alt="Portrait of Dr. Prashanth R Kamath, Dermatologist in Mangaluru">
+                            <img src="download.jpg" alt="Dr. Prashanth R Kamath - Dermatologist consultation in Mangaluru clinic">
                             <div class="verified-badge">✓</div>
                         </div>
                         <div class="doc-info">
@@ -1435,6 +1517,44 @@
             </div>
         </div>
     </section>
+
+    <!-- Curved divider: Hero → Services -->
+    <div class="section-divider section-divider-down" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z" fill="#f7fbff"/></svg>
+    </div>
+
+    <!-- Trust Block: 4 statistic cards -->
+    <section class="trust-block section-padding" id="trust-block">
+        <div class="container">
+            <div class="trust-block-grid">
+                <div class="trust-block-card reveal reveal-zoom">
+                    <div class="trust-block-icon"><i class="fa-solid fa-star"></i></div>
+                    <h3>4.7 Patient Rating</h3>
+                    <p>Rated by 228+ verified patients</p>
+                </div>
+                <div class="trust-block-card reveal reveal-zoom">
+                    <div class="trust-block-icon"><i class="fa-solid fa-user-group"></i></div>
+                    <h3>228+ Reviews</h3>
+                    <p>Real feedback from our patients</p>
+                </div>
+                <div class="trust-block-card reveal reveal-zoom">
+                    <div class="trust-block-icon"><i class="fa-solid fa-briefcase-medical"></i></div>
+                    <h3>9+ Years Experience</h3>
+                    <p>Clinical expertise in dermatology</p>
+                </div>
+                <div class="trust-block-card reveal reveal-zoom">
+                    <div class="trust-block-icon"><i class="fa-solid fa-hospital"></i></div>
+                    <h3>Dermatology Specialist</h3>
+                    <p>Skin & hair treatment focus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curved divider: Trust → Services -->
+    <div class="section-divider section-divider-up" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 L0,40 Q360,80 720,40 T1440,40 L1440,0 Z" fill="#ffffff"/></svg>
+    </div>
 
     <!-- 4. SERVICES -->
     <section class="services section-padding" id="services" style="position: relative;">
@@ -1496,14 +1616,15 @@
             </div>
             <div class="services-detailed-grid">
                 <article class="service-detail reveal reveal-zoom">
-                    <h3>General Skin Consultation in Mangaluru</h3>
+                    <h3>General Dermatology Consultation in Mangaluru</h3>
                     <p>
                         Many patients visit Skin 360 after trying home remedies or over-the-counter creams that did not work.
                         During a consultation, Dr. Prashanth listens to your history, examines your skin in detail, and explains what is actually happening beneath the surface.
                     </p>
-                    <p>
-                        You leave with a clear diagnosis, a written plan, and simple instructions you can follow at home.
-                    </p>
+                    <div class="service-detail-block"><strong>Symptoms we address:</strong> Acne, pigmentation, rashes, itching, nail changes, hair fall, scalp issues, and unexplained skin changes.</div>
+                    <div class="service-detail-block"><strong>Treatment method:</strong> Clinical examination, diagnosis, and personalised plans combining prescriptions, topical treatments, and lifestyle guidance.</div>
+                    <div class="service-detail-block"><strong>Expected results:</strong> Clear diagnosis, a written plan, and simple instructions you can follow at home. Most concerns show improvement within 2–4 weeks.</div>
+                    <div class="service-detail-block"><strong>Recovery timeline:</strong> No downtime. Follow-up reviews typically at 2–4 weeks to track progress.</div>
                     <ul>
                         <li>Personalised plans for acne, pigmentation, allergies, and infections</li>
                         <li>Guidance on what to stop using and what to continue</li>
@@ -1512,11 +1633,15 @@
                 </article>
 
                 <article class="service-detail reveal reveal-zoom">
-                    <h3>Chronic Skin Disease Management</h3>
+                    <h3>Skin Disease Treatment in Mangaluru</h3>
                     <p>
                         Conditions like eczema, psoriasis, urticaria, and vitiligo can come and go for years. At Skin 360,
                         the goal is not just temporary relief — it is long-term control with fewer flares.
                     </p>
+                    <div class="service-detail-block"><strong>Symptoms patients experience:</strong> Itching, scaling, redness, dry patches, raised plaques, hives, and pigment changes.</div>
+                    <div class="service-detail-block"><strong>Treatment method:</strong> Medical prescriptions, topical steroids or immunomodulators, phototherapy when indicated, and lifestyle modifications suited to Mangaluru's climate.</div>
+                    <div class="service-detail-block"><strong>Expected results:</strong> Reduced flares, better control of symptoms, and improved quality of life. Many patients achieve long remission periods.</div>
+                    <div class="service-detail-block"><strong>Recovery timeline:</strong> Initial improvement in 2–4 weeks. Maintenance phase may continue for months depending on the condition.</div>
                     <p>
                         Treatment plans balance medical prescriptions, lifestyle advice, and maintenance routines that fit into your daily life.
                     </p>
@@ -1528,14 +1653,15 @@
                 </article>
 
                 <article class="service-detail reveal reveal-zoom">
-                    <h3>Hair Loss & Scalp Treatments</h3>
+                    <h3>Hair Loss Treatment at Hair Treatment Clinic Mangaluru</h3>
                     <p>
                         Hair fall can feel alarming and emotional. Instead of quick fixes, Skin 360 focuses on understanding why you are losing hair —
                         from nutrition and hormones to lifestyle and genetics, positioning the clinic as a dedicated hair treatment clinic in Mangaluru.
                     </p>
-                    <p>
-                        Treatments combine medical therapy, advanced procedures, and scalp health routines.
-                    </p>
+                    <div class="service-detail-block"><strong>Symptoms patients experience:</strong> Thinning at crown or temples, diffuse shedding, scalp itching, dandruff, and visible scalp through hair.</div>
+                    <div class="service-detail-block"><strong>Treatment method:</strong> Medical therapy (minoxidil, finasteride when suitable), PRP, growth factor sessions, and scalp care protocols.</div>
+                    <div class="service-detail-block"><strong>Expected results:</strong> Reduced shedding, improved density, and documented progress. Visible changes typically from 3–6 months onwards.</div>
+                    <div class="service-detail-block"><strong>Recovery timeline:</strong> No downtime. Treatment is ongoing; first signs of improvement often in 3–4 months with consistent follow-up.</div>
                     <ul>
                         <li>Structured evaluation of pattern hair loss, diffuse thinning, and dandruff</li>
                         <li>Clinic-based PRP and growth factor sessions when indicated</li>
@@ -1549,9 +1675,10 @@
                         Laser hair reduction at Skin 360 uses FDA-approved technology, with parameters adjusted for Indian skin tones.
                         As a specialist centre for laser skin treatment in Mangaluru, the focus is on safety first, then comfort, then long-term reduction.
                     </p>
-                    <p>
-                        Each session is planned so you know what to expect — how many sittings, gap between visits, and visible milestones.
-                    </p>
+                    <div class="service-detail-block"><strong>Symptoms patients seek to address:</strong> Unwanted hair on face, underarms, arms, legs, or bikini area; frequent shaving or waxing; ingrown hairs.</div>
+                    <div class="service-detail-block"><strong>Treatment method:</strong> Diode or similar laser technology, patch test first, then 6–8 sessions at 4–6 week intervals. Settings personalised for skin type and area.</div>
+                    <div class="service-detail-block"><strong>Expected results:</strong> Significant, long-term hair reduction. Most patients see 70–90% reduction after completing the recommended sessions.</div>
+                    <div class="service-detail-block"><strong>Recovery timeline:</strong> Mild redness for a few hours. Avoid sun and heavy exercise for 24–48 hours. Full course typically 6–12 months.</div>
                     <ul>
                         <li>Patch test before starting full treatment</li>
                         <li>Personalised settings for face, underarms, arms, legs and bikini area</li>
@@ -1560,11 +1687,15 @@
                 </article>
 
                 <article class="service-detail reveal reveal-zoom">
-                    <h3>Skin Polishing & Glow Treatments</h3>
+                    <h3>Skin Polishing at Skin Clinic in Mangaluru</h3>
                     <p>
                         For patients who say “my skin just looks dull,” polishing and glow sessions gently clear dead cells,
                         smoothen texture, and help skincare products work better.
                     </p>
+                    <div class="service-detail-block"><strong>Symptoms patients experience:</strong> Dullness, uneven texture, rough skin, mild pigmentation, and clogged pores.</div>
+                    <div class="service-detail-block"><strong>Treatment method:</strong> Microdermabrasion, medically curated chemical peels, and gentle exfoliation. Protocols tailored for skin type and goals.</div>
+                    <div class="service-detail-block"><strong>Expected results:</strong> Brighter, smoother skin; improved texture; better product absorption. Healthy, even-toned complexion without aggressive bleaching.</div>
+                    <div class="service-detail-block"><strong>Recovery timeline:</strong> Mild flaking or redness for 2–5 days. A series of 4–6 sessions, 2–4 weeks apart, gives best results.</div>
                     <p>
                         Instead of promising overnight fairness, the clinic focuses on healthy, even-toned, confident skin.
                     </p>
@@ -1606,10 +1737,10 @@
                 <div class="ba-card-portrait reveal reveal-left">
                     <div class="ba-portrait-slider" data-ba-slider aria-label="Acne before and after slider">
                         <div class="slider-image before-image">
-                            <img src="before11.jpg" alt="Before acne treatment at Skin 360 Mangaluru" loading="lazy">
+                            <img src="before11.jpg" alt="Before acne treatment - skin condition prior to dermatology treatment at Skin 360 Mangaluru" loading="lazy">
                         </div>
                         <div class="slider-image after-image">
-                            <img src="after11.jpg" alt="After acne treatment at Skin 360 Mangaluru" loading="lazy">
+                            <img src="after11.jpg" alt="After acne treatment - skin improvement after dermatology treatment at Skin 360 Mangaluru" loading="lazy">
                         </div>
                         <div class="slider-handle">⟷</div>
                     </div>
@@ -1623,10 +1754,10 @@
                 <div class="ba-card-portrait reveal reveal-right">
                     <div class="ba-portrait-slider" data-ba-slider aria-label="Hair restoration before and after slider">
                         <div class="slider-image before-image">
-                            <img src="before22.jpg" alt="Before hair restoration treatment at Skin 360 Mangaluru" loading="lazy">
+                            <img src="before22.jpg" alt="Before hair restoration - scalp condition prior to hair treatment at Skin 360 Mangaluru" loading="lazy">
                         </div>
                         <div class="slider-image after-image">
-                            <img src="after22.jpg" alt="After hair restoration treatment at Skin 360 Mangaluru" loading="lazy">
+                            <img src="after22.jpg" alt="After hair restoration - improved hair density after treatment at Skin 360 Mangaluru" loading="lazy">
                         </div>
                         <div class="slider-handle">⟷</div>
                     </div>
@@ -1639,6 +1770,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Curved divider: Transformations → Trust -->
+    <div class="section-divider section-divider-down" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z" fill="var(--card-bg)"/></svg>
+    </div>
 
     <!-- 6. TRUST (FULL WIDTH) -->
     <section class="trust" id="trust">
@@ -1666,6 +1802,11 @@
         </div>
     </section>
 
+    <!-- Curved divider: Trust → Clinic Gallery -->
+    <div class="section-divider section-divider-down" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z" fill="#ffffff"/></svg>
+    </div>
+
     <!-- 6.5 CLINIC GALLERY -->
     <section class="clinic-gallery section-padding" id="clinic-gallery">
         <div class="container">
@@ -1676,19 +1817,19 @@
             <div class="gallery-container reveal">
                 <div class="gallery-track" id="galleryTrack">
                     <div class="gallery-slide">
-                        <img src="clinic1.avif" alt="Skin 360 Clinic interior view" loading="lazy">
+                        <img src="clinic1.avif" alt="Dermatologist consultation room at Skin 360 skin clinic in Mangaluru" loading="lazy">
                     </div>
                     <div class="gallery-slide">
-                        <img src="clinic1.avif" alt="Treatment room at Skin 360 Clinic" loading="lazy">
+                        <img src="clinic1.avif" alt="Skin treatment room at Skin 360 Dermatology Clinic Mangaluru" loading="lazy">
                     </div>
                     <div class="gallery-slide">
-                        <img src="clinic1.avif" alt="Reception area at Skin 360 Dermatology Clinic" loading="lazy">
+                        <img src="clinic1.avif" alt="Reception area - Skin 360 Dermatology Clinic in Mangaluru" loading="lazy">
                     </div>
                     <div class="gallery-slide">
-                        <img src="clinic1.avif" alt="Dermatology equipment at Skin 360 Clinic" loading="lazy">
+                        <img src="clinic1.avif" alt="Laser and dermatology equipment at Skin 360 skin clinic Mangaluru" loading="lazy">
                     </div>
                     <div class="gallery-slide">
-                        <img src="clinic1.avif" alt="Consultation room at Skin 360 Mangaluru" loading="lazy">
+                        <img src="clinic1.avif" alt="Dermatologist consultation in Mangaluru at Skin 360 Dermatology Clinic" loading="lazy">
                     </div>
                 </div>
                 <div class="gallery-dots" id="galleryDots" aria-label="Clinic gallery navigation"></div>
@@ -1916,7 +2057,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="#home" class="logo" style="margin-bottom: 12px;">
-                        <img src="images (1).jpg" alt="Skin 360 Dermatology Clinic logo small">
+                        <img src="images (1).jpg" alt="Skin 360 Dermatology Clinic - skin specialist Mangaluru">
                     </a>
                     <p style="font-size:0.8rem;opacity:0.6">
                         Expert dermatological care in Mangaluru. From everyday concerns to advanced procedures, Skin 360 combines science with empathy.
