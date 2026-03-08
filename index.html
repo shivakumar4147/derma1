@@ -271,33 +271,17 @@
             z-index: 1002;
         }
 
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-weight: 700;
-            font-family: var(--font-ui);
-            font-size: 0.9rem;
+        .logo img {
+            height: 44px;
+            width: auto;
+            display: block;
+            object-fit: contain;
         }
 
-        .logo-text h2 {
-            font-size: 1.1rem;
-            line-height: 1;
-            margin-bottom: 0;
-            color: var(--dark);
-        }
-
-        .logo-text span {
-            font-size: 0.6rem;
-            font-family: var(--font-ui);
-            color: var(--light-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        @media (max-width: 480px) {
+            .logo img {
+                height: 36px;
+            }
         }
 
         .nav-links {
@@ -441,7 +425,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #0F172A;
+            background: var(--primary-light);
             padding: 6px 12px;
             border-radius: 9999px;
             font-family: var(--font-ui);
@@ -450,7 +434,7 @@
             box-shadow: var(--shadow-sm);
             margin-bottom: 16px;
             color: var(--primary);
-            border: 1px solid var(--border);
+            border: 1px solid rgba(14, 165, 233, 0.2);
         }
 
         .dot-pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; position: relative; }
@@ -485,7 +469,7 @@
             border-top: 4px solid var(--primary);
             position: relative;
             max-width: 380px;
-            margin: 0 auto;
+            margin: 40px auto 0;
             transition: var(--transition);
         }
         .doctor-card:hover {
@@ -493,37 +477,45 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         }
 
-        .doc-header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+        .doc-header { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; }
         .avatar-box { 
-            width: 70px; 
-            height: 70px; 
+            width: 100px; 
+            height: 100px; 
             background: var(--primary-light); 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            border-radius: 50%; 
+            border-radius: 24px; 
             position: relative;
             border: 2px solid var(--white);
             box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+            overflow: hidden;
         }
-        .avatar-box span { font-size: 2.2rem; }
+        .avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
         .verified-badge { 
             position: absolute; 
-            bottom: -2px; 
-            right: -2px; 
+            bottom: 6px; 
+            right: 6px; 
             background: var(--accent); 
             color: white; 
-            font-size: 0.6rem; 
-            width: 22px;
-            height: 22px;
+            font-size: 0.65rem; 
+            width: 24px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%; 
             border: 2px solid #ffffff; 
+            z-index: 2;
         }
-        .doc-info h2 { font-size: 1.25rem; margin-bottom: 4px; color: var(--dark); letter-spacing: -0.01em; }
-        .doc-info p { color: var(--mid-gray); font-family: var(--font-ui); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .doc-info h2 { font-size: 1.4rem; margin-bottom: 6px; color: var(--dark); letter-spacing: -0.02em; line-height: 1.2; }
+        .doc-info p { color: var(--primary); font-family: var(--font-ui); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
         .rating-row { 
             display: flex;
@@ -552,7 +544,30 @@
         .tag i { color: var(--primary); font-size: 0.8rem; }
 
         .floating-chips { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
-        .chip { background: #0F172A; padding: 12px 20px; border-radius: 16px; display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow-sm); width: fit-content; animation: float-chip 4s infinite alternate ease-in-out; font-size: 0.82rem; color: var(--dark); border: 1px solid var(--border); }
+        .chip { 
+            background: #ffffff; 
+            padding: 12px 20px; 
+            border-radius: 16px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+            width: fit-content; 
+            animation: float-chip 4s infinite alternate ease-in-out; 
+            font-size: 0.82rem; 
+            color: var(--dark); 
+            border: 1px solid var(--border); 
+        }
+        .chip span {
+            background: var(--primary-light);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
         .chip:nth-child(2) { align-self: flex-end; animation-delay: -1s; }
         @keyframes float-chip { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
 
@@ -650,7 +665,9 @@
         .clinic-gallery { background: var(--background); overflow: hidden; }
         .gallery-container { position: relative; width: 100%; max-width: 1100px; margin: 0 auto; overflow: hidden; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--shadow); }
         .gallery-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-        .gallery-slide { flex: 0 0 33.333%; aspect-ratio: 4 / 3; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--primary); border-right: 1px solid var(--border); }
+        .gallery-slide { flex: 0 0 33.333%; aspect-ratio: 4 / 3; background: #f1f5f9; display: flex; align-items: center; justify-content: center; overflow: hidden; border-right: 1px solid var(--border); }
+        .gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+        .gallery-slide:hover img { transform: scale(1.05); }
         
         @media (max-width: 768px) {
             .gallery-slide { flex: 0 0 100%; aspect-ratio: 16 / 9; }
@@ -787,11 +804,11 @@
               .reviewer-avatar { width: 36px; height: 36px; font-size: 0.8rem; }
               .reviewer-info h4 { font-size: 0.85rem; }
 
-              .doctor-card { padding: 16px; margin-bottom: 20px; width: 100%; max-width: 100%; box-sizing: border-box; }
-               .doc-header { gap: 12px; margin-bottom: 12px; }
-               .avatar-box { width: 60px; height: 60px; }
-               .avatar-box span { font-size: 1.8rem; }
-               .doc-info h2 { font-size: 1.1rem; }
+              .doctor-card { padding: 20px; margin-bottom: 20px; width: 100%; max-width: 100%; box-sizing: border-box; }
+               .doc-header { gap: 16px; margin-bottom: 16px; }
+               .avatar-box { width: 80px; height: 80px; border-radius: 18px; }
+               .doc-info h2 { font-size: 1.2rem; }
+               .doc-info p { font-size: 0.75rem; }
                .rating-row { padding-bottom: 12px; margin-bottom: 12px; }
 
                .map-card { height: 280px; width: 100%; }
@@ -853,11 +870,7 @@
     <nav id="navbar">
         <div class="container nav-inner">
             <a href="#" class="logo">
-                <div class="logo-icon">S360</div>
-                <div class="logo-text">
-                    <h2>Skin 360</h2>
-                    <span>Dermatology Clinic</span>
-                </div>
+                <img style="border-radius: 15px;" src="images (1).jpg" alt="Skin 360 Logo">
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -909,7 +922,7 @@
                 <div class="doctor-card">
                     <div class="doc-header">
                         <div class="avatar-box">
-                            <span>👨‍⚕️</span>
+                            <img src="download.jpg" alt="Dr. Prashanth R Kamath">
                             <div class="verified-badge">✓</div>
                         </div>
                         <div class="doc-info">
@@ -997,8 +1010,8 @@
                 <!-- Card 1 -->
                 <div class="ba-card-portrait reveal">
                     <div class="ba-portrait-slider" data-ba-slider>
-                        <div class="slider-image before-image"><img src="images - Copy.jpg" alt="Before Acne"></div>
-                        <div class="slider-image after-image"><img src="images.jpg" alt="After Acne"></div>
+                        <div class="slider-image before-image"><img src="before11.jpg" alt="Before Acne"></div>
+                        <div class="slider-image after-image"><img src="after11.jpg" alt="After Acne"></div>
                         <div class="slider-handle">⟷</div>
                     </div>
                     <div class="ba-portrait-info">
@@ -1010,8 +1023,8 @@
                 <!-- Card 2 -->
                 <div class="ba-card-portrait reveal">
                     <div class="ba-portrait-slider" data-ba-slider>
-                        <div class="slider-image before-image"><img src="images - Copy.jpg" alt="Before Hair"></div>
-                        <div class="slider-image after-image"><img src="images.jpg" alt="After Hair"></div>
+                        <div class="slider-image before-image"><img src="before22.jpg" alt="Before Hair"></div>
+                        <div class="slider-image after-image"><img src="after22.jpg" alt="After Hair"></div>
                         <div class="slider-handle">⟷</div>
                     </div>
                     <div class="ba-portrait-info">
@@ -1045,11 +1058,11 @@
             </div>
             <div class="gallery-container reveal">
                 <div class="gallery-track" id="galleryTrack">
-                    <div class="gallery-slide">🏥</div>
-                    <div class="gallery-slide">🛋️</div>
-                    <div class="gallery-slide">🔬</div>
-                    <div class="gallery-slide">👩‍⚕️</div>
-                    <div class="gallery-slide">✨</div>
+                    <div class="gallery-slide"><img src="clinic1.avif" alt="Clinic Interior"></div>
+                    <div class="gallery-slide"><img src="clinic1.avif" alt="Treatment Room"></div>
+                    <div class="gallery-slide"><img src="clinic1.avif" alt="Reception Area"></div>
+                    <div class="gallery-slide"><img src="clinic1.avif" alt="Dermatology Equipment"></div>
+                    <div class="gallery-slide"><img src="clinic1.avif" alt="Consultation Room"></div>
                 </div>
                 <div class="gallery-dots" id="galleryDots"></div>
             </div>
@@ -1160,7 +1173,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 12px;"><div class="logo-icon">S360</div><h2 style="color:white;font-size:1.2rem;margin:0">Skin 360</h2></div>
+                    <a href="#" class="logo" style="margin-bottom: 12px;">
+                        <img style="border-radius: 15px;" src="images (1).jpg" alt="Skin 360 Logo">
+                    </a>
                     <p style="font-size:0.8rem;opacity:0.6">Expert dermatological care in Mangaluru. Your beauty, our expertise.</p>
                     <div class="social-links"><a href="#" class="social-btn">FB</a><a href="#" class="social-btn">IG</a><a href="#" class="social-btn">YT</a></div>
                 </div>
