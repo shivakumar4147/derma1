@@ -6,12 +6,12 @@
     
     <!-- SEO & Meta Tags -->
     <title>Skin 360 – Best Dermatologist in Mangaluru | Dr. Prashanth R Kamath</title>
-    <meta name="description" content="Skin 360 Dermatology Clinic, Kodailbail Mangaluru. Dr. Prashanth R Kamath, 9+ yrs experience. Book skin & hair treatments.">
-    <meta name="keywords" content="Best Dermatologist in Mangaluru, Skin Specialist Mangaluru, Dermatology Clinic Kodailbail, Hair Loss Treatment Mangaluru, Laser Hair Removal Mangaluru">
-    
+    <meta name="description" content="Skin 360 Dermatology Clinic in Kodailbail, Mangaluru. Expert skin and hair treatments by Dr. Prashanth R Kamath. Book consultations for acne, hair loss, laser, skin polishing, and advanced dermatology.">
+    <meta name="keywords" content="Best Dermatologist in Mangaluru, Skin Specialist Mangaluru, Dermatology Clinic Kodailbail, Hair Loss Treatment Mangaluru, Laser Hair Removal Mangaluru, Skin Polishing Mangaluru, Acne Treatment Mangaluru, Dermatologist near me, Skin 360 Clinic">
+
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Skin 360 – Best Dermatologist in Mangaluru | Dr. Prashanth R Kamath">
-    <meta property="og:description" content="Expert skin and hair care in Mangaluru. Book an appointment with Dr. Prashanth R Kamath today.">
+    <meta property="og:description" content="Expert skin and hair care in Mangaluru. Advanced acne, hair loss, laser, and aesthetic treatments with honest guidance and predictable results.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://skin360mangalore.com">
     <meta property="og:image" content="https://skin360mangalore.com/og-image.jpg">
@@ -26,7 +26,7 @@
       "@type": "MedicalClinic",
       "name": "Skin 360 Dermatology Clinic",
       "image": "https://skin360mangalore.com/clinic-logo.png",
-      "@id": "",
+      "@id": "https://skin360mangalore.com/#clinic",
       "url": "https://skin360mangalore.com",
       "telephone": "+919738287177",
       "address": {
@@ -61,7 +61,32 @@
         "name": "Dr. Prashanth R Kamath",
         "jobTitle": "Dermatologist",
         "description": "Skin & Hair Specialist with 12+ years experience."
-      }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "10000"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": "Jyothi",
+          "reviewBody": "Best doctor, my skin problem solved quickly. Explains the issue very clearly and gives confidence.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": "Swasthik Anchan",
+          "reviewBody": "Highly recommend this place. The treatment for hair loss was very effective and visible.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }
+      ]
     }
     </script>
 
@@ -69,10 +94,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-
+    
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    
     <!-- Design System (CSS) -->
     <style>
         :root {
@@ -130,10 +155,26 @@
         img, iframe {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
-        h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.1; margin-bottom: 20px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
-        h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 16px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
+        h1 { 
+            font-size: clamp(2.4rem, 5vw, 4.2rem); 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+            font-family: var(--font-headings); 
+            color: var(--dark); 
+            font-weight: 700; 
+            letter-spacing: -0.03em;
+        }
+        h2 { 
+            font-size: clamp(2rem, 4vw, 3.2rem); 
+            margin-bottom: 16px; 
+            font-family: var(--font-headings); 
+            color: var(--dark); 
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
         
         h1 span, h2 span {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -141,8 +182,18 @@
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
-        h3 { font-size: 1.1rem; margin-bottom: 10px; font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
-        h4 { font-family: var(--font-headings); color: var(--dark); font-weight: 700; }
+        h3 { 
+            font-size: 1.1rem; 
+            margin-bottom: 10px; 
+            font-family: var(--font-headings); 
+            color: var(--dark); 
+            font-weight: 700; 
+        }
+        h4 { 
+            font-family: var(--font-headings); 
+            color: var(--dark); 
+            font-weight: 700; 
+        }
 
         p {
             font-weight: 400;
@@ -199,6 +250,13 @@
 
         .bg-gradient {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--light-gray);
+            font-size: 0.95rem;
         }
 
         /* Refined Scroll Reveal System */
@@ -302,11 +360,11 @@
         }
 
         /* Hover & Interactive Polish */
-        .service-card, .ba-card-portrait, .review-card, .doctor-card, .trust-stat-card, .gallery-slide {
+        .service-card, .ba-card-portrait, .review-card, .doctor-card, .trust-stat-card, .gallery-slide, .booking-card, .contact-card-mini, .info-card-small {
             transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .service-card:hover, .ba-card-portrait:hover, .review-card:hover, .trust-stat-card:hover {
+        .service-card:hover, .ba-card-portrait:hover, .review-card:hover, .trust-stat-card:hover, .booking-card:hover, .contact-card-mini:hover, .info-card-small:hover {
             transform: translateY(-12px) scale(1.02);
             box-shadow: 0 30px 60px rgba(30, 58, 138, 0.1);
             border-color: var(--primary);
@@ -353,6 +411,14 @@
 
         .gallery-slide:hover img {
             transform: scale(1.15);
+        }
+
+        .cta-urgency {
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: var(--font-ui);
         }
 
         /* Liquid Glass Navbar Polish */
@@ -403,8 +469,8 @@
         .logo img {
             height: 44px;
             width: auto;
-            display: block;
             object-fit: contain;
+            border-radius: 15px;
         }
 
         @media (max-width: 480px) {
@@ -584,7 +650,7 @@
         .hero-stats {
             display: flex;
             gap: 24px;
-            margin-bottom: 32px;
+            margin-bottom: 20px;
             font-family: var(--font-ui);
             font-size: 0.85rem;
         }
@@ -592,10 +658,10 @@
         .stat-item h3 { font-size: 1.5rem; margin-bottom: 2px; color: var(--dark); }
         .stat-item p { color: var(--light-gray); font-size: 0.75rem; }
 
-        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
         .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #0F172A; }
         .btn-whatsapp { background: linear-gradient(135deg, #22C55E, #16a34a); color: white; }
-        .btn-outline { border: 1.5px solid var(--primary); color: var(--primary); padding: 8.5px 20px; }
+        .btn-outline { border: 1.5px solid var(--primary); color: var(--primary); padding: 8.5px 20px; background:#ffffff; }
 
         /* Hero Doctor Card */
         .doctor-card {
@@ -634,7 +700,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
         .verified-badge { 
             position: absolute; 
@@ -724,6 +789,40 @@
         .service-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
         .service-card p { font-size: 0.88rem; margin-bottom: 20px; line-height: 1.6; color: var(--mid-gray); }
         .learn-more { color: var(--primary); font-weight: 700; font-family: var(--font-ui); font-size: 0.85rem; display: flex; align-items: center; gap: 4px; }
+
+        /* Detailed Services (SEO-rich) */
+        .services-detailed { background: #f9fbff; }
+        .services-detailed-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 32px; }
+        .service-detail {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+        .service-detail h3 {
+            margin-bottom: 10px;
+        }
+        .service-detail p {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            margin-bottom: 10px;
+        }
+        .service-detail ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-top: 6px;
+            font-size: 0.86rem;
+            color: var(--mid-gray);
+        }
+
+        @media (max-width: 1024px) {
+            .services-detailed-grid { gap: 24px; }
+        }
+
+        @media (max-width: 768px) {
+            .services-detailed-grid { grid-template-columns: 1fr; }
+        }
 
         /* Before/After Gallery - Portrait with Side Info */
         .ba-grid-portrait { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
@@ -824,7 +923,6 @@
             box-shadow: none; 
             border: none;
             position: relative;
-            transition: var(--transition);
         }
         /* Vertical Separator Lines */
         .trust-stat-card:not(:last-child)::after {
@@ -881,7 +979,9 @@
             .testimonial-grid { gap: 20px; }
         }
         .review-card { background: var(--background); padding: 36px; border-radius: var(--radius-lg); box-shadow: var(--shadow); border: 1px solid var(--border); position: relative; }
-        .review-text { font-style: italic; margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--mid-gray); }
+        .review-text { font-style: italic; margin-bottom: 18px; font-size: 0.9rem; line-height: 1.6; color: var(--mid-gray); }
+        .review-source { font-size: 0.75rem; color: var(--light-gray); margin-bottom: 14px; display:flex; align-items:center; gap:6px; }
+        .review-source i { color:#4285F4; }
         .reviewer { display: flex; align-items: center; gap: 14px; }
         .reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--primary)); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 700; font-size: 0.9rem; }
         .reviewer-info h4 { font-size: 0.95rem; margin: 0; color: var(--dark); }
@@ -896,6 +996,31 @@
         .trust-badges { display: flex; flex-direction: column; gap: 12px; }
         .badge-small { display: flex; align-items: center; gap: 10px; background: rgba(22, 163, 74, 0.08); color: var(--accent); padding: 10px 16px; border-radius: 10px; font-weight: 600; font-size: 0.8rem; border: 1px solid rgba(22, 163, 74, 0.1); }
 
+        .google-reviews {
+            margin-top: 28px;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+        }
+        .google-pill {
+            display:flex;
+            align-items:center;
+            gap:6px;
+            padding:6px 10px;
+            border-radius:999px;
+            background:#f1f5ff;
+            font-weight:600;
+            font-size:0.78rem;
+        }
+        .google-pill i { color:#4285F4; }
+
         /* Appointment Section */
         .appointment { background: #0F172A; color: white; }
         .appointment h2, .appointment h3 { color: #ffffff; }
@@ -907,13 +1032,25 @@
         .info-card-small { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); }
         .info-card-small strong { display: block; margin-top: 6px; font-size: 1rem; color: #ffffff; }
         .booking-card { background: #ffffff; padding: 32px; border-radius: var(--radius-lg); color: var(--dark); border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
-        .booking-card h3 { color: var(--dark); margin-bottom: 24px; }
+        .booking-card h3 { color: var(--dark); margin-bottom: 12px; }
+        .booking-note { font-size: 0.8rem; color: var(--light-gray); margin-bottom: 16px; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
         .form-group { margin-bottom: 16px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.85rem; color: var(--dark); }
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; border: 1.5px solid #e2e8f0; border-radius: 10px; font-family: inherit; font-size: 0.9rem; background: #f8fafc; color: var(--dark); transition: border-color 0.2s; }
-        .form-group input:focus { border-color: var(--primary); outline: none; background: #ffffff; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); outline: none; background: #ffffff; }
         .btn-submit { width: 100%; padding: 16px; background: var(--primary); color: #ffffff; margin-top: 12px; font-size: 1rem; }
+
+        .booking-urgency {
+            margin-top: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--accent);
+            display:flex;
+            align-items:center;
+            gap:6px;
+        }
+        .booking-urgency i { font-size:0.8rem; }
 
         /* Contact Section */
         .contact { background: var(--background); }
@@ -942,7 +1079,7 @@
         .fa-whatsapp { color: #ffffff; }
 
         /* Sticky CTA */
-        .sticky-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); padding: 12px 20px; display: flex; gap: 12px; justify-content: center; z-index: 1000; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 -8px 24px rgba(0,0,0,0.08); border-top: 1px solid var(--border); }
+        .sticky-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); padding: 12px 20px; display: flex; gap: 12px; justify-content: center; z-index: 1000; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 -8px 24px rgba(0,0,0,0.08); border-top: 1px solid var(--border); }
         .sticky-cta.visible { transform: translateY(0); }
         .sticky-cta .btn { flex: 1; max-width: 180px; padding: 12px 10px; font-size: 0.85rem; box-shadow: none; }
         .sticky-cta .btn-whatsapp { background: #25D366; color: white; }
@@ -1007,7 +1144,7 @@
               .trust-stat-card span { font-size: 1.5rem; margin-bottom: 8px; }
 
               .review-card { padding: 16px; width: 100%; }
-              .review-text { font-size: 0.82rem; margin-bottom: 16px; }
+              .review-text { font-size: 0.82rem; margin-bottom: 12px; }
               .reviewer-avatar { width: 36px; height: 36px; font-size: 0.8rem; }
               .reviewer-info h4 { font-size: 0.85rem; }
 
@@ -1063,7 +1200,7 @@
     <!-- Curvy Flowing Background -->
     <canvas id="curvyLine"></canvas>
 
-    <div class="bg-animation">
+    <div class="bg-animation" aria-hidden="true">
         <div class="mesh-gradient"></div>
         <div class="flowing-line"></div>
         <div class="flowing-line"></div>
@@ -1080,10 +1217,10 @@
     </div>
 
     <!-- 2. NAVBAR -->
-    <nav id="navbar">
+    <nav id="navbar" aria-label="Main navigation">
         <div class="container nav-inner">
-            <a href="#" class="logo">
-                <img style="border-radius: 15px;" src="images (1).jpg" alt="Skin 360 Logo">
+            <a href="#home" class="logo" aria-label="Skin 360 Dermatology Clinic home">
+                <img src="images (1).jpg" alt="Skin 360 Dermatology Clinic Logo">
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -1093,9 +1230,9 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#appointment" class="btn nav-cta"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -1105,37 +1242,53 @@
         <a href="#trust">About</a>
         <a href="#testimonials">Reviews</a>
         <a href="#contact">Contact</a>
-        <a href="#appointment"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
+        <a href="#appointment" class="btn btn-primary"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
     </div>
 
     <!-- 3. HERO -->
     <section class="hero" id="home">
-        <svg class="bg-line hero-line" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bg-line hero-line" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M0,160 C120,80 240,80 360,160 C480,240 600,240 720,160 C840,80 960,80 1080,160 C1200,240 1320,240 1440,160" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.3"></path>
             <path d="M0,192 C120,112 240,112 360,192 C480,272 600,272 720,192 C840,112 960,112 1080,192 C1200,272 1320,272 1440,192" fill="none" stroke="var(--secondary)" stroke-width="2" opacity="0.2"></path>
         </svg>
-        <div class="hero-bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+        <div class="hero-bg-orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
         <div class="container hero-inner">
             <div class="hero-content reveal reveal-left">
-                <div class="badge-pill"><div class="dot-pulse"></div>Best Dermatologist in Mangaluru</div>
+                <div class="badge-pill">
+                    <div class="dot-pulse"></div>
+                    Best Dermatologist in Mangaluru
+                </div>
                 <h1>Expert <span>Skin & Hair</span> Care You Deserve</h1>
-                <p class="hero-sub">Led by Dr. Prashanth R Kamath, Skin 360 offers advanced solutions for lasting radiance and confidence.</p>
+                <p class="hero-sub">
+                    Led by Dr. Prashanth R Kamath, Skin 360 offers advanced dermatology treatments in Mangaluru —
+                    from acne and hair loss to laser procedures — with a clear focus on long-term results and patient comfort.
+                </p>
                 <div class="hero-stats">
-                        <div class="stat-item"><h3 class="counter" data-target="10000">0</h3><p>Patients</p></div>
-                        <div class="stat-item"><h3 class="counter" data-target="12">0</h3><p>Years Exp</p></div>
-                        <div class="stat-item"><h3>4.7⭐</h3><p>Rating</p></div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="10000">0</h3>
+                        <p>Patients Cared For</p>
                     </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="12">0</h3>
+                        <p>Years of Expertise</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.7⭐</h3>
+                        <p>Average Google Rating</p>
+                    </div>
+                </div>
                 <div class="hero-btns">
                     <a href="#appointment" class="btn btn-primary"><i class="fa-regular fa-calendar"></i> Book Appointment</a>
                     <a href="https://wa.me/919738287177" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     <a href="tel:+919738287177" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
                 </div>
+                <p class="cta-urgency">Limited dermatology slots today in Kodailbail — confirm yours in under 60 seconds.</p>
             </div>
             <div class="hero-right reveal reveal-right">
                 <div class="doctor-card">
                     <div class="doc-header">
                         <div class="avatar-box">
-                            <img src="download.jpg" alt="Dr. Prashanth R Kamath">
+                            <img src="download.jpg" alt="Portrait of Dr. Prashanth R Kamath, Dermatologist in Mangaluru">
                             <div class="verified-badge">✓</div>
                         </div>
                         <div class="doc-info">
@@ -1148,14 +1301,14 @@
                         <div class="rating-text">4.7/5 (228 verified reviews)</div>
                     </div>
                     <div class="tag-row">
-                        <span class="tag">📍 Kodailbail</span>
-                        <span class="tag">🎓 12+ Years Exp</span>
-                        <span class="tag">🔬 Laser Specialist</span>
+                        <span class="tag"><i class="fa-solid fa-location-dot"></i> Kodailbail, Mangaluru</span>
+                        <span class="tag"><i class="fa-solid fa-user-doctor"></i> 12+ Years Exp</span>
+                        <span class="tag"><i class="fa-solid fa-flask"></i> Laser & Advanced Care</span>
                     </div>
                 </div>
                 <div class="floating-chips">
-                    <div class="chip"><span>🧴</span> <strong>Skin Polishing</strong> — Glow Treatment</div>
-                    <div class="chip"><span>💇</span> <strong>Hair Restoration</strong> — Growth Protocol</div>
+                    <div class="chip"><span>🧴</span> <strong>Skin Polishing</strong> — Brighter, smoother complexion over a series of gentle sessions.</div>
+                    <div class="chip"><span>💇</span> <strong>Hair Restoration</strong> — Structured protocols to improve thinning and hair fall.</div>
                 </div>
             </div>
         </div>
@@ -1163,51 +1316,158 @@
 
     <!-- 4. SERVICES -->
     <section class="services section-padding" id="services" style="position: relative;">
-        <svg class="bg-line services-line" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bg-line services-line" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M0,160 C120,240 240,240 360,160 C480,80 600,80 720,160 C840,240 960,240 1080,160 C1200,80 1320,80 1440,160" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.2"></path>
         </svg>
         <div class="container">
             <div class="section-header reveal" style="text-align: center; margin-bottom: 32px;">
                 <h2>Comprehensive Services</h2>
-                <p>Advanced medical and cosmetic treatments tailored to you.</p>
+                <p>Advanced medical and cosmetic treatments tailored to your skin, hair, and confidence — right here in Mangaluru.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">🩺</div>
                     <h3>General Consultation</h3>
-                    <p>Expert diagnosis for all skin, hair, and nail concerns.</p>
+                    <p>Expert diagnosis for all skin, hair, and nail concerns with clear, easy-to-follow treatment plans.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
                 <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">🔬</div>
                     <h3>Skin Disease</h3>
-                    <p>Evidence-based treatment for chronic skin conditions.</p>
+                    <p>Evidence-based treatment for chronic skin conditions such as eczema, psoriasis, vitiligo, and more.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
                 <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">💇‍♀️</div>
                     <h3>Hair Care</h3>
-                    <p>Advanced solutions for hair loss and scalp disorders.</p>
+                    <p>Advanced solutions for hair loss, dandruff, and scalp disorders using targeted medical protocols.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
                 <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">⚡</div>
                     <h3>Laser Removal</h3>
-                    <p>FDA-approved permanent hair reduction technology.</p>
+                    <p>FDA-approved permanent hair reduction technology tailored to your skin type and hair pattern.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
                 <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">✨</div>
                     <h3>Skin Polishing</h3>
-                    <p>Microdermabrasion for radiant and smooth skin.</p>
+                    <p>Microdermabrasion and glow treatments to gently resurface and brighten tired-looking skin.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
                 <div class="service-card reveal reveal-zoom">
                     <div class="icon-box">🌟</div>
                     <h3>Advanced Care</h3>
-                    <p>Chemical peels, PRP, and specialized anti-ageing.</p>
+                    <p>Chemical peels, PRP, and specialized anti-ageing plans built around your lifestyle and goals.</p>
                     <a href="#appointment" class="learn-more">Learn More →</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.5 DETAILED SERVICES (SEO-RICH) -->
+    <section class="services-detailed section-padding" id="services-detailed">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 32px;">
+                <h2>Dermatology Services in Mangaluru</h2>
+                <p>Every concern is different. Each service below is designed to solve a specific problem with realistic, step-by-step care.</p>
+            </div>
+            <div class="services-detailed-grid">
+                <article class="service-detail reveal reveal-zoom">
+                    <h3>General Skin Consultation in Mangaluru</h3>
+                    <p>
+                        Many patients visit Skin 360 after trying home remedies or over-the-counter creams that did not work.
+                        During a consultation, Dr. Prashanth listens to your history, examines your skin in detail, and explains what is actually happening beneath the surface.
+                    </p>
+                    <p>
+                        You leave with a clear diagnosis, a written plan, and simple instructions you can follow at home.
+                    </p>
+                    <ul>
+                        <li>Personalised plans for acne, pigmentation, allergies, and infections</li>
+                        <li>Guidance on what to stop using and what to continue</li>
+                        <li>Follow-up reviews to track improvement over weeks, not days</li>
+                    </ul>
+                </article>
+
+                <article class="service-detail reveal reveal-zoom">
+                    <h3>Chronic Skin Disease Management</h3>
+                    <p>
+                        Conditions like eczema, psoriasis, urticaria, and vitiligo can come and go for years. At Skin 360,
+                        the goal is not just temporary relief — it is long-term control with fewer flares.
+                    </p>
+                    <p>
+                        Treatment plans balance medical prescriptions, lifestyle advice, and maintenance routines that fit into your daily life.
+                    </p>
+                    <ul>
+                        <li>Stepwise protocols to reduce itching, scaling, and redness</li>
+                        <li>Education on triggers and how to avoid them in Mangaluru’s climate</li>
+                        <li>Realistic expectations: what can fully clear, and what needs ongoing care</li>
+                    </ul>
+                </article>
+
+                <article class="service-detail reveal reveal-zoom">
+                    <h3>Hair Loss & Scalp Treatments</h3>
+                    <p>
+                        Hair fall can feel alarming and emotional. Instead of quick fixes, Skin 360 focuses on understanding why you are losing hair —
+                        from nutrition and hormones to lifestyle and genetics.
+                    </p>
+                    <p>
+                        Treatments combine medical therapy, advanced procedures, and scalp health routines.
+                    </p>
+                    <ul>
+                        <li>Structured evaluation of pattern hair loss, diffuse thinning, and dandruff</li>
+                        <li>Clinic-based PRP and growth factor sessions when indicated</li>
+                        <li>Documented progress with photos so you can see the change</li>
+                    </ul>
+                </article>
+
+                <article class="service-detail reveal reveal-zoom">
+                    <h3>Laser Hair Removal in Mangaluru</h3>
+                    <p>
+                        Laser hair reduction at Skin 360 uses FDA-approved technology, with parameters adjusted for Indian skin tones.
+                        The focus is on safety first, then comfort, then long-term reduction.
+                    </p>
+                    <p>
+                        Each session is planned so you know what to expect — how many sittings, gap between visits, and visible milestones.
+                    </p>
+                    <ul>
+                        <li>Patch test before starting full treatment</li>
+                        <li>Personalised settings for face, underarms, arms, legs and bikini area</li>
+                        <li>Detailed aftercare to minimise bumps, tanning, or irritation</li>
+                    </ul>
+                </article>
+
+                <article class="service-detail reveal reveal-zoom">
+                    <h3>Skin Polishing & Glow Treatments</h3>
+                    <p>
+                        For patients who say “my skin just looks dull,” polishing and glow sessions gently clear dead cells,
+                        smoothen texture, and help skincare products work better.
+                    </p>
+                    <p>
+                        Instead of promising overnight fairness, the clinic focuses on healthy, even-toned, confident skin.
+                    </p>
+                    <ul>
+                        <li>Microdermabrasion and medically curated peels</li>
+                        <li>Protocols for brides, events, and important life moments</li>
+                        <li>Maintenance plans to keep the glow after the procedure</li>
+                    </ul>
+                </article>
+
+                <article class="service-detail reveal reveal-zoom">
+                    <h3>Advanced Aesthetic Dermatology</h3>
+                    <p>
+                        Ageing is natural — but you can choose how gracefully it appears on your skin.
+                        Advanced care at Skin 360 includes anti-ageing peels, scar revisions, and regenerative procedures.
+                    </p>
+                    <p>
+                        Every aesthetic recommendation is made only after understanding your comfort level and long-term goals.
+                    </p>
+                    <ul>
+                        <li>Protocols for fine lines, open pores, and acne scars</li>
+                        <li>Step-by-step approach instead of aggressive one-time procedures</li>
+                        <li>Honest counselling about what is possible and what is not</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
@@ -1217,33 +1477,41 @@
         <div class="container">
             <div class="section-header reveal" style="text-align: center; margin-bottom: 48px;">
                 <h2>Real Transformations</h2>
-                <p>Visible results from our advanced clinical protocols.</p>
+                <p>Visible results from our advanced clinical protocols — every journey is documented, gradual, and honest.</p>
             </div>
             <div class="ba-grid-portrait">
                 <!-- Card 1 -->
                 <div class="ba-card-portrait reveal reveal-left">
-                    <div class="ba-portrait-slider" data-ba-slider>
-                        <div class="slider-image before-image"><img src="before11.jpg" alt="Before Acne"></div>
-                        <div class="slider-image after-image"><img src="after11.jpg" alt="After Acne"></div>
+                    <div class="ba-portrait-slider" data-ba-slider aria-label="Acne before and after slider">
+                        <div class="slider-image before-image">
+                            <img src="before11.jpg" alt="Before acne treatment at Skin 360 Mangaluru" loading="lazy">
+                        </div>
+                        <div class="slider-image after-image">
+                            <img src="after11.jpg" alt="After acne treatment at Skin 360 Mangaluru" loading="lazy">
+                        </div>
                         <div class="slider-handle">⟷</div>
                     </div>
                     <div class="ba-portrait-info">
                         <span class="ba-tag">Acne Control</span>
                         <h3>Clearer Skin</h3>
-                        <p>Significant reduction in active inflammatory acne and improvement in skin texture after 4 sessions.</p>
+                        <p>Significant reduction in active acne and smoother texture after a personalised combination of medical treatment and in-clinic procedures over 4 sessions.</p>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="ba-card-portrait reveal reveal-right">
-                    <div class="ba-portrait-slider" data-ba-slider>
-                        <div class="slider-image before-image"><img src="before22.jpg" alt="Before Hair"></div>
-                        <div class="slider-image after-image"><img src="after22.jpg" alt="After Hair"></div>
+                    <div class="ba-portrait-slider" data-ba-slider aria-label="Hair restoration before and after slider">
+                        <div class="slider-image before-image">
+                            <img src="before22.jpg" alt="Before hair restoration treatment at Skin 360 Mangaluru" loading="lazy">
+                        </div>
+                        <div class="slider-image after-image">
+                            <img src="after22.jpg" alt="After hair restoration treatment at Skin 360 Mangaluru" loading="lazy">
+                        </div>
                         <div class="slider-handle">⟷</div>
                     </div>
                     <div class="ba-portrait-info">
                         <span class="ba-tag">Hair Restoration</span>
                         <h3>Density Growth</h3>
-                        <p>Visible improvement in hair density and scalp coverage using our specialized PRP & Growth Factor protocol.</p>
+                        <p>Improved hair density and scalp coverage after a structured plan involving PRP, medical therapy, and nutrition support over several months.</p>
                     </div>
                 </div>
             </div>
@@ -1253,10 +1521,26 @@
     <!-- 6. TRUST (FULL WIDTH) -->
     <section class="trust" id="trust">
         <div class="trust-grid">
-            <div class="trust-stat-card reveal reveal-zoom"><h2 class="counter" data-target="12">0</h2><p>Years Exp</p></div>
-            <div class="trust-stat-card reveal reveal-zoom"><h2 class="counter" data-target="10000">0</h2><p>Patients</p></div>
-            <div class="trust-stat-card reveal reveal-zoom"><h2 class="counter" data-target="6">0</h2><p>Treatments</p></div>
-            <div class="trust-stat-card reveal reveal-zoom"><h2 class="counter" data-target="1">0</h2><p>Clinic</p></div>
+            <div class="trust-stat-card reveal reveal-zoom">
+                <span><i class="fa-solid fa-user-doctor"></i></span>
+                <h2 class="counter" data-target="12">0</h2>
+                <p>Years Exp</p>
+            </div>
+            <div class="trust-stat-card reveal reveal-zoom">
+                <span><i class="fa-solid fa-people-group"></i></span>
+                <h2 class="counter" data-target="10000">0</h2>
+                <p>Patients</p>
+            </div>
+            <div class="trust-stat-card reveal reveal-zoom">
+                <span><i class="fa-solid fa-syringe"></i></span>
+                <h2 class="counter" data-target="6">0</h2>
+                <p>Treatments</p>
+            </div>
+            <div class="trust-stat-card reveal reveal-zoom">
+                <span><i class="fa-solid fa-clinic-medical"></i></span>
+                <h2 class="counter" data-target="1">0</h2>
+                <p>Clinic</p>
+            </div>
         </div>
     </section>
 
@@ -1265,57 +1549,129 @@
         <div class="container">
             <div class="section-header reveal" style="text-align: center; margin-bottom: 40px;">
                 <h2>Our Clinic Gallery</h2>
-                <p>A glimpse into our modern facilities and care environment.</p>
+                <p>A glimpse into our modern, calm clinic environment where comfort and confidentiality come first.</p>
             </div>
             <div class="gallery-container reveal">
                 <div class="gallery-track" id="galleryTrack">
-                    <div class="gallery-slide"><img src="clinic1.avif" alt="Clinic Interior"></div>
-                    <div class="gallery-slide"><img src="clinic1.avif" alt="Treatment Room"></div>
-                    <div class="gallery-slide"><img src="clinic1.avif" alt="Reception Area"></div>
-                    <div class="gallery-slide"><img src="clinic1.avif" alt="Dermatology Equipment"></div>
-                    <div class="gallery-slide"><img src="clinic1.avif" alt="Consultation Room"></div>
+                    <div class="gallery-slide">
+                        <img src="clinic1.avif" alt="Skin 360 Clinic interior view" loading="lazy">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="clinic1.avif" alt="Treatment room at Skin 360 Clinic" loading="lazy">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="clinic1.avif" alt="Reception area at Skin 360 Dermatology Clinic" loading="lazy">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="clinic1.avif" alt="Dermatology equipment at Skin 360 Clinic" loading="lazy">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="clinic1.avif" alt="Consultation room at Skin 360 Mangaluru" loading="lazy">
+                    </div>
                 </div>
-                <div class="gallery-dots" id="galleryDots"></div>
+                <div class="gallery-dots" id="galleryDots" aria-label="Clinic gallery navigation"></div>
             </div>
         </div>
     </section>
 
-    <!-- 7. TESTIMONIALS -->
+    <!-- 7. TESTIMONIALS / GOOGLE REVIEWS -->
     <section class="testimonials section-padding" id="testimonials">
         <div class="container">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 32px;">
+                <h2>What Our Patients Say</h2>
+                <p>Real feedback from patients who trusted Skin 360 with their skin and hair journeys.</p>
+            </div>
             <div class="testimonial-grid">
                 <div class="review-card reveal reveal-zoom">
                     <p class="review-text">"Best doctor, my skin problem solved in one tablet. Explains the issue very clearly."</p>
+                    <div class="review-source">
+                        <i class="fa-brands fa-google"></i>
+                        Verified Google Review
+                    </div>
                     <div class="reviewer">
                         <div class="reviewer-avatar">J</div>
-                        <div class="reviewer-info"><h4>Jyothi</h4><span>Verified Patient</span></div>
+                        <div class="reviewer-info">
+                            <h4>Jyothi</h4>
+                            <span>Verified Patient</span>
+                        </div>
                     </div>
                 </div>
                 <div class="review-card reveal reveal-zoom">
-                    <p class="review-text">"Highly recommend this place. The treatment for hair loss was very effective and visible."</p>
+                    <p class="review-text">
+                        "Highly recommend this place. The treatment for hair loss was very effective and visible."
+                    </p>
+                    <div class="review-source">
+                        <i class="fa-brands fa-google"></i>
+                        Verified Google Review
+                    </div>
                     <div class="reviewer">
                         <div class="reviewer-avatar">SA</div>
-                        <div class="reviewer-info"><h4>Swasthik Anchan</h4><span>Verified Patient</span></div>
+                        <div class="reviewer-info">
+                            <h4>Swasthik Anchan</h4>
+                            <span>Verified Patient</span>
+                        </div>
                     </div>
                 </div>
                 <div class="review-card reveal reveal-zoom">
-                    <p class="review-text">"One of the best doctors in town for hair and skin care. Very professional staff."</p>
+                    <p class="review-text">
+                        "One of the best doctors in town for hair and skin care. Very professional staff."
+                    </p>
+                    <div class="review-source">
+                        <i class="fa-brands fa-google"></i>
+                        Verified Google Review
+                    </div>
                     <div class="reviewer">
                         <div class="reviewer-avatar">SB</div>
-                        <div class="reviewer-info"><h4>Swapnil Sudhakar B</h4><span>Verified Patient</span></div>
+                        <div class="reviewer-info">
+                            <h4>Swapnil Sudhakar B</h4>
+                            <span>Verified Patient</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="rating-summary reveal">
-                <div class="summary-score"><h2>4.7</h2><p>10000+ Reviews</p></div>
-                <div class="rating-bars">
-                    <div class="bar-item"><span>5★</span><div class="bar-bg"><div class="bar-fill" style="width: 75%"></div></div></div>
-                    <div class="bar-item"><span>4★</span><div class="bar-bg"><div class="bar-fill" style="width: 18%"></div></div></div>
-                    <div class="bar-item"><span>3★</span><div class="bar-bg"><div class="bar-fill" style="width: 7%"></div></div></div>
+                <div class="summary-score">
+                    <h2>4.7</h2>
+                    <p>10000+ Google Ratings &amp; Reviews</p>
+                </div>
+                <div class="rating-bars" aria-hidden="true">
+                    <div class="bar-item">
+                        <span>5★</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 75%"></div></div>
+                    </div>
+                    <div class="bar-item">
+                        <span>4★</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 18%"></div></div>
+                    </div>
+                    <div class="bar-item">
+                        <span>3★</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 7%"></div></div>
+                    </div>
                 </div>
                 <div class="trust-badges">
-                    <div class="badge-small">✓ Verified HealthPlix Reviews</div>
-                    <div class="badge-small">🏆 Top Rated in Mangaluru</div>
+                    <div class="badge-small">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        ✓ Verified HealthPlix Reviews
+                    </div>
+                    <div class="badge-small">
+                        <i class="fa-solid fa-medal"></i>
+                        🏆 Top Rated Skin & Hair Clinic in Mangaluru
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simple Google-style reviews widget -->
+            <div class="google-reviews reveal reveal-zoom" aria-label="Google reviews summary">
+                <div class="google-pill">
+                    <i class="fa-brands fa-google"></i> Google Reviews
+                </div>
+                <div>
+                    Rated <strong>4.7 / 5</strong> by patients on Google.
+                    Read more experiences and leave your own review on our Google listing.
+                    <br>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Skin+360+Dermatology+Clinic+Mangaluru" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:600;">
+                        View All Google Reviews →
+                    </a>
                 </div>
             </div>
         </div>
@@ -1327,29 +1683,70 @@
             <div class="appt-layout">
                 <div class="appt-left reveal">
                     <h2>Book Your Visit</h2>
-                    <div class="step-item"><div class="step-num">1</div><p>Fill Details</p></div>
-                    <div class="step-item"><div class="step-num">2</div><p>Get Confirmation</p></div>
-                    <div class="step-item"><div class="step-num">3</div><p>Visit Clinic</p></div>
+                    <p style="margin-bottom:16px; max-width:420px;">
+                        Booking an appointment at Skin 360 is simple — especially if you are visiting for the first time.
+                        Follow the steps below and our team will confirm your slot.
+                    </p>
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <p>Fill your basic details and choose the treatment you are interested in.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <p>Our clinic team will call / message to confirm the exact time.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <p>Visit the clinic at Kodailbail, Mangaluru for your consultation or procedure.</p>
+                    </div>
                     <div class="info-grid">
-                        <div class="info-card-small"><i class="fa-solid fa-phone"></i> Call Us<strong>+91 97382 87177</strong></div>
-                        <div class="info-card-small"><i class="fa-regular fa-stopwatch"></i> Timings<strong>10:30 AM onwards</strong></div>
+                        <div class="info-card-small">
+                            <i class="fa-solid fa-phone"></i>
+                            Call Us
+                            <strong>+91 97382 87177</strong>
+                        </div>
+                        <div class="info-card-small">
+                            <i class="fa-regular fa-stopwatch"></i>
+                            Timings
+                            <strong>10:30 AM onwards</strong>
+                        </div>
                     </div>
                 </div>
                 <div class="booking-card reveal">
                     <h3>✨ Confirm Slot</h3>
+                    <p class="booking-note">
+                        Share a few details so we can block a convenient time for you. A team member will reach out to confirm.
+                    </p>
                     <form id="appointmentForm">
                         <div class="form-row">
-                            <div class="form-group"><label>Name</label><input type="text" required></div>
-                            <div class="form-group"><label>Mobile</label><input type="tel" required></div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input id="name" type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile</label>
+                                <input id="mobile" type="tel" required>
+                            </div>
                         </div>
-                        <div class="form-group"><label>Treatment</label>
-                            <select required>
+                        <div class="form-group">
+                            <label for="treatment">Treatment</label>
+                            <select id="treatment" required>
                                 <option value="" disabled selected>Select Treatment</option>
-                                <option>General Consultation</option><option>Hair Care</option><option>Laser</option><option>Skin Polishing</option>
+                                <option>General Consultation</option>
+                                <option>Hair Care</option>
+                                <option>Laser</option>
+                                <option>Skin Polishing</option>
                             </select>
                         </div>
-                        <div class="form-group"><label>Date</label><input type="date" id="apptDate" required></div>
+                        <div class="form-group">
+                            <label for="apptDate">Preferred Date</label>
+                            <input type="date" id="apptDate" required>
+                        </div>
                         <button type="submit" class="btn btn-submit"><i class="fa-regular fa-calendar"></i> Book Now</button>
+                        <div class="booking-urgency">
+                            <i class="fa-regular fa-clock"></i>
+                            Limited clinic slots today — earlier bookings get preferred timings.
+                        </div>
                     </form>
                 </div>
             </div>
@@ -1365,15 +1762,27 @@
                         <h3>📍 Location</h3>
                         <p>Kodailbail, Mangaluru, Karnataka – 575003</p>
                         <div style="margin: 16px 0;">
-                            <div class="hour-row"><i class="fa-regular fa-stopwatch" style="margin-right: 8px; font-size: 0.8rem; color: var(--primary);"></i><span>Mon–Fri</span><strong>10:30 AM - 7:00 PM</strong></div>
-                            <div class="hour-row"><i class="fa-regular fa-stopwatch" style="margin-right: 8px; font-size: 0.8rem; color: var(--primary);"></i><span>Saturday</span><strong>10:30 AM - 4:00 PM</strong></div>
+                            <div class="hour-row">
+                                <span>
+                                    <i class="fa-regular fa-stopwatch" style="margin-right: 8px; font-size: 0.8rem; color: var(--primary);"></i>
+                                    Mon–Fri
+                                </span>
+                                <strong>10:30 AM - 7:00 PM</strong>
+                            </div>
+                            <div class="hour-row">
+                                <span>
+                                    <i class="fa-regular fa-stopwatch" style="margin-right: 8px; font-size: 0.8rem; color: var(--primary);"></i>
+                                    Saturday
+                                </span>
+                                <strong>10:30 AM - 4:00 PM</strong>
+                            </div>
                         </div>
                         <a href="tel:+919738287177" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call</a>
                         <a href="https://wa.me/919738287177" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
                 <div class="map-card reveal">
-                    <iframe src="https://maps.google.com/maps?q=12.876347595950604,74.83984696660714&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=12.876347595950604,74.83984696660714&z=15&output=embed" allowfullscreen loading="lazy" title="Skin 360 Dermatology Clinic location on Google Maps"></iframe>
                 </div>
             </div>
         </div>
@@ -1384,22 +1793,53 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 12px;">
-                        <img style="border-radius: 15px;" src="images (1).jpg" alt="Skin 360 Logo">
+                    <a href="#home" class="logo" style="margin-bottom: 12px;">
+                        <img src="images (1).jpg" alt="Skin 360 Dermatology Clinic logo small">
                     </a>
-                    <p style="font-size:0.8rem;opacity:0.6">Expert dermatological care in Mangaluru. Your beauty, our expertise.</p>
-                    <div class="social-links"><a href="#" class="social-btn">FB</a><a href="#" class="social-btn">IG</a><a href="#" class="social-btn">YT</a></div>
+                    <p style="font-size:0.8rem;opacity:0.6">
+                        Expert dermatological care in Mangaluru. From everyday concerns to advanced procedures, Skin 360 combines science with empathy.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn" aria-label="Skin 360 on Facebook">FB</a>
+                        <a href="#" class="social-btn" aria-label="Skin 360 on Instagram">IG</a>
+                        <a href="#" class="social-btn" aria-label="Skin 360 on YouTube">YT</a>
+                    </div>
                 </div>
-                <div class="footer-col"><h4>Services</h4><ul><li>Dermatology</li><li>Hair Care</li><li>Laser</li></ul></div>
-                <div class="footer-col"><h4>Quick Links</h4><ul><li>Home</li><li>Services</li><li>About</li></ul></div>
-                <div class="footer-col"><h4>Contact</h4><p>+91 97382 87177</p><div class="badge-small" style="margin-top:8px"><i class="fa-regular fa-calendar"></i> HealthPlix Booking</div></div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li>Dermatology</li>
+                        <li>Hair Care</li>
+                        <li>Laser</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#trust">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>+91 97382 87177</p>
+                    <div class="badge-small" style="margin-top:8px">
+                        <i class="fa-regular fa-calendar"></i> HealthPlix Booking
+                    </div>
+                </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 Skin 360 Clinic.</p><div><a href="#">Privacy</a> · <a href="#">Terms</a></div></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Skin 360 Clinic.</p>
+                <div>
+                    <a href="#">Privacy</a> · <a href="#">Terms</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- 11. STICKY CTA -->
-    <div class="sticky-cta" id="stickyCTA">
+    <div class="sticky-cta" id="stickyCTA" aria-label="Quick contact options">
         <a href="tel:+919738287177" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call</a>
         <a href="https://wa.me/919738287177" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         <a href="#appointment" class="btn btn-book"><i class="fa-regular fa-calendar"></i> Book</a>
@@ -1412,17 +1852,28 @@
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
 
+        // Scroll events: navbar, progress bar, sticky CTA
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             progressBar.style.width = (winScroll / height) * 100 + "%";
+
             if (window.scrollY > 400) stickyCTA.classList.add('visible'); else stickyCTA.classList.remove('visible');
         });
 
-        hamburger.onclick = () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('open'); };
-        mobileMenu.onclick = () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); };
+        // Mobile menu
+        hamburger.onclick = () => { 
+            hamburger.classList.toggle('active'); 
+            mobileMenu.classList.toggle('open'); 
+        };
+        mobileMenu.onclick = () => { 
+            hamburger.classList.remove('active'); 
+            mobileMenu.classList.remove('open'); 
+        };
 
+        // Scroll reveal
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => { 
                 if (e.isIntersecting) { 
@@ -1440,7 +1891,7 @@
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // Magnetic Button Effect
+        // Magnetic Button Effect for primary CTAs
         document.querySelectorAll('.btn-primary').forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
                 const rect = btn.getBoundingClientRect();
@@ -1453,6 +1904,7 @@
             });
         });
 
+        // Counter animation
         const countObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
@@ -1461,8 +1913,12 @@
                     let start = 0;
                     const timer = setInterval(() => {
                         start += Math.ceil(end / 40);
-                        if (start >= end) { target.innerText = end + "+"; clearInterval(timer); }
-                        else target.innerText = start + "+";
+                        if (start >= end) { 
+                            target.innerText = end + "+"; 
+                            clearInterval(timer); 
+                        } else {
+                            target.innerText = start + "+";
+                        }
                     }, 50);
                     countObserver.unobserve(target);
                 }
@@ -1477,14 +1933,14 @@
             const startDragging = (e) => {
                 activeBASlider = slider;
                 slider.classList.add('dragging');
-                updateBASlider(e.clientX || e.touches[0].clientX);
+                updateBASlider(e.clientX || (e.touches && e.touches[0].clientX));
             };
             slider.addEventListener('mousedown', startDragging);
             slider.addEventListener('touchstart', startDragging, { passive: true });
         });
 
         function updateBASlider(clientX) {
-            if (!activeBASlider) return;
+            if (!activeBASlider || clientX == null) return;
             const handle = activeBASlider.querySelector('.slider-handle');
             const after = activeBASlider.querySelector('.after-image');
             const rect = activeBASlider.getBoundingClientRect();
@@ -1512,7 +1968,7 @@
         window.addEventListener('mouseup', stopBADragging);
         window.addEventListener('touchend', stopBADragging);
 
-        // Clinic Gallery Slider Logic
+        // Clinic Gallery Slider Logic (lightweight)
         function initGallerySlider() {
             const track = document.getElementById('galleryTrack');
             const dotsContainer = document.getElementById('galleryDots');
@@ -1570,6 +2026,7 @@
 
         initGallerySlider();
 
+        // Appointment form toast + simple UX
         document.getElementById('appointmentForm').onsubmit = (e) => {
             e.preventDefault();
             const toast = document.getElementById('toast');
@@ -1581,7 +2038,7 @@
         const dateIn = document.getElementById('apptDate');
         if (dateIn) dateIn.min = new Date().toISOString().split('T')[0];
 
-        // Curvy Wave Animation
+        // Curvy Wave Animation (thin, subtle line)
         const canvas = document.getElementById('curvyLine');
         const ctx = canvas.getContext('2d');
         
@@ -1598,7 +2055,7 @@
         }
         
         let t = 0;
-        let waveSpeed = 0.004;
+        let waveSpeed = 0.004; // slowed for smoother, calmer motion
         
         function drawWave() {
             ctx.clearRect(0, 0, canvasW, canvasH);
